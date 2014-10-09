@@ -84,4 +84,9 @@
     <string name="power_menu_long_press_for_torch">Hold to toggle flashlight</string>
     <string name="torch_long_press_power_text">Long press for torch only works when screen is off.\nLong pressing again when flashlight is on will turn it off, even if screen is on.</string>
     <string name="power_menu_summary_long_press_for_torch">Toggle flashlight</string>
+
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Since the last update</string>
+    <string name="changelog_error">Unable to load changelog</string>
 </resources>

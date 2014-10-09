@@ -27,6 +27,14 @@
         android:layout="@layout/nad_user_profile"
         android:selectable="false"/>
 
+    <!-- Changelog -->
+    <Preference
+        android:key="changelog"
+        android:order="7"
+        android:title="@string/changelog_title"
+        android:summary="@string/changelog_summary"
+        android:fragment="com.android.settings.syberia.Changelog" />
+
     <PreferenceCategory
         android:key="basic_info_category"
         android:selectable="false"
