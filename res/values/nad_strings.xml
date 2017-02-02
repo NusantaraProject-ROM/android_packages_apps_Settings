@@ -42,4 +42,7 @@
 
     <!-- Mobile data panel -->
     <string name="cellular_data_title">Mobile data</string>
+
+    <!-- Running services -->
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>
