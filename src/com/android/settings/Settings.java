@@ -328,4 +328,6 @@ public class Settings extends SettingsActivity {
      */
     public static class NusantaraWingsActivity extends SettingsActivity {}
     public static class NusantaraCatActivity extends SettingsActivity {}
+
+    public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
 }
