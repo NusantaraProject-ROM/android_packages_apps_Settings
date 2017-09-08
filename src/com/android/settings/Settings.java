@@ -240,4 +240,8 @@ public class Settings extends SettingsActivity {
      */
     public static class MediaControlsSettingsActivity extends SettingsActivity {}
 
+    /**
+     * Activity for Nusantara Wings
+     */
+    public static class NusantaraWingsActivity extends SettingsActivity { /* empty */ }
 }
