@@ -44,7 +44,15 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java",
+           "NusantaraWings/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.nusantara.wings"],
+
+    resource_dirs: ["res",
+                    "NusantaraWings/res"
+    ],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
