@@ -19,6 +19,7 @@
     <string name="nad_version">Nusantara version</string>
     <string name="nad_version_default">Unknown</string>
     <string name="keywords_corvus_version">nad version</string>
+    <string name="maintainer">Maintainer</string>
 
     <!-- Fingerprint location message - default -->
     <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Locate the fingerprint sensor on the front of your 
