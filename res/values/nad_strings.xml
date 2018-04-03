@@ -22,5 +22,6 @@
     <string name="nusantara_version">Nusantara version</string>
     <string name="nusantara_version_default">Unknown</string>
     <string name="keywords_nusantara_version">nusantara version</string>
+    <string name="maintainer">Maintainer</string>
 
 </resources>
