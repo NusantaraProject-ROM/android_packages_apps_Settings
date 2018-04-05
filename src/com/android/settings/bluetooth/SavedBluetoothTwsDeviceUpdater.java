@@ -16,7 +16,6 @@
  *    * Neither the name of The Linux Foundation nor the names of its
  *      contributors may be used to endorse or promote products derived
  *      from this software without specific prior written permission.
-
  * NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
  * GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
  * HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
@@ -50,7 +49,6 @@ package com.android.settings.bluetooth;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 
 import com.android.settings.connecteddevice.DevicePreferenceCallback;
@@ -63,17 +61,24 @@ import com.android.settingslib.bluetooth.LocalBluetoothManager;
  */
 public class SavedBluetoothTwsDeviceUpdater extends BluetoothDeviceUpdater {
 
-    private static final String PREF_KEY = "saved_bt_tws";
-
     public SavedBluetoothTwsDeviceUpdater(Context context, DashboardFragment fragment,
             DevicePreferenceCallback devicePreferenceCallback) {
         super(context, fragment, devicePreferenceCallback);
     }
 
-    SavedBluetoothTwsDeviceUpdater(Context context, DashboardFragment fragment,
+    SavedBluetoothTwsDeviceUpdater(DashboardFragment fragment,
             DevicePreferenceCallback devicePreferenceCallback,
             LocalBluetoothManager localBluetoothManager) {
-        super(context, fragment, devicePreferenceCallback, localBluetoothManager);
+        super(fragment, devicePreferenceCallback, localBluetoothManager);
+    }
+
+    @Override
+    public void onConnectionStateChanged(CachedBluetoothDevice cachedDevice, int state) {
+        if (state == BluetoothAdapter.STATE_CONNECTED) {
+            removePreference(cachedDevice);
+        } else if (state == BluetoothAdapter.STATE_DISCONNECTED) {
+            addPreference(cachedDevice);
+        }
     }
 
     @Override
@@ -81,10 +86,5 @@ public class SavedBluetoothTwsDeviceUpdater extends BluetoothDeviceUpdater {
         final BluetoothDevice device = cachedDevice.getDevice();
         return device.getBondState() == BluetoothDevice.BOND_BONDED &&
             !device.isConnected() && device.isTwsPlusDevice();
-    }
-
-    @Override
-    protected String getPreferenceKey() {
-        return PREF_KEY;
     }
 }

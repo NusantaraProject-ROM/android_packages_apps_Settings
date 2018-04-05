@@ -16,7 +16,6 @@
  *    * Neither the name of The Linux Foundation nor the names of its
  *      contributors may be used to endorse or promote products derived
  *      from this software without specific prior written permission.
-
  * NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
  * GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
  * HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
@@ -51,9 +50,9 @@ package com.android.settings.connecteddevice;
 import android.content.pm.PackageManager;
 import android.content.Context;
 
-import androidx.preference.Preference;
-import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceScreen;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceScreen;
 
 import com.android.settings.bluetooth.BluetoothDeviceUpdater;
 import com.android.settings.bluetooth.SavedBluetoothTwsDeviceUpdater;
