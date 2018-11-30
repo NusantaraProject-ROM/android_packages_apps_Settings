@@ -275,6 +275,7 @@
 
         <!-- Define this color for material design -->
         <item name="colorPrimaryVariant">@android:color/white</item>
+        <item name="colorAccent">@*android:color/accent_device_default_light</item>
     </style>
     
     <style name="Theme.Settings.Start" parent="Theme.Settings.HomeStart">
@@ -290,6 +291,7 @@
     <style name="Theme.Settings.Accent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@*android:color/accent_device_default_light</item>
         <item name="preferenceTheme">@style/PreferenceThemeAccent</item>
         <item name="colorPrimaryDark">@*android:color/accent_device_default_light</item>
         <item name="android:navigationBarDividerColor">@*android:color/transparent</item>
