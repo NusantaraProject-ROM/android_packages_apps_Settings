@@ -19,4 +19,6 @@
     <!-- Themes -->
     <color name="homepage_du_themes_background">#FF5E35B1</color>
 
+    <color name="settings_icon_oneplus">@android:color/white</color>
+
 </resources>
