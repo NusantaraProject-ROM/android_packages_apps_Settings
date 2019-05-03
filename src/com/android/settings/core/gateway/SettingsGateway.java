@@ -154,6 +154,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.dirtyunicorns.tweaks.DirtyTweaks;
 import com.dirtyunicorns.tweaks.fragments.GamingMode;
 
+import com.android.settings.livedisplay.LiveDisplaySettings;
+
 public class SettingsGateway {
 
     /**
@@ -294,7 +296,8 @@ public class SettingsGateway {
             DirtyTweaks.class.getName(),
             GamingMode.class.getName(),
             RunningServices.class.getName(),
-            DarkModeSettingsFragment.class.getName()
+            DarkModeSettingsFragment.class.getName(),
+            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
