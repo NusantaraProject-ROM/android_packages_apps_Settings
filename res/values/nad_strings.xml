@@ -18,4 +18,9 @@
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
 
+    <!-- About phone screen, Nusantara version -->
+    <string name="nusantara_version">Nusantara version</string>
+    <string name="nusantara_version_default">Unknown</string>
+    <string name="keywords_nusantara_version">nusantara version</string>
+
 </resources>
