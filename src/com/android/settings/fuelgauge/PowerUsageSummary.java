@@ -27,6 +27,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.text.format.Formatter;
 import android.os.UserHandle;
@@ -60,6 +61,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -68,13 +70,15 @@ import java.lang.Integer;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.nusantara.support.preferences.SystemSettingMasterSwitchPreference;
+
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
  * since the last time it was unplugged.
  */
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class PowerUsageSummary extends PowerUsageBase implements OnLongClickListener,
-        BatteryTipPreferenceController.BatteryTipListener {
+        BatteryTipPreferenceController.BatteryTipListener, Preference.OnPreferenceChangeListener {
 
     static final String TAG = "PowerUsageSummary";
 
@@ -86,10 +90,13 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     private static final String KEY_CURRENT_BATTERY_CAPACITY = "current_battery_capacity";
     private static final String KEY_DESIGNED_BATTERY_CAPACITY = "designed_battery_capacity";
     private static final String KEY_BATTERY_CHARGE_CYCLES = "battery_charge_cycles";
+    private static final String SMART_CHARGING = "smart_charging";
 
     private String mBatDesCap;
     private String mBatCurCap;
     private String mBatChgCyc;
+
+    private SystemSettingMasterSwitchPreference mSmartCharging;
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -283,6 +290,22 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         if (!getResources().getBoolean(R.bool.config_supportBatteryHealth)) {
             getPreferenceScreen().removePreference(mCyclesHealthPref);
         }
+
+        mSmartCharging = (SystemSettingMasterSwitchPreference) findPreference(SMART_CHARGING);
+        mSmartCharging.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SMART_CHARGING, 0) == 1));
+        mSmartCharging.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mSmartCharging) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SMART_CHARGING, value ? 1 : 0);
+            return true;
+		}
+        return false;
     }
 
     @Override
