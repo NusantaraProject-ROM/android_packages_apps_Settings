@@ -13,9 +13,6 @@
 
 <resources>
 
-    <!-- Shortcuts -->
-    <color name="icon_accent_custom">@*android:color/accent_device_default_light</color>
-
-    <color name="settings_panel_background_color">@android:color/white</color>
+    <color name="settings_panel_background_color">@*android:color/notification_material_background_color</color>
 
 </resources>
