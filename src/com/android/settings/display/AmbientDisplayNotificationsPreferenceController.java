@@ -26,6 +26,9 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 
 import com.android.settings.R;
+
+import com.android.internal.util.nad.NadUtils;
+
 import com.android.settings.core.TogglePreferenceController;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
@@ -80,7 +83,8 @@ public class AmbientDisplayNotificationsPreferenceController extends
 
     @Override
     public int getAvailabilityStatus() {
-        return getAmbientConfig().pulseOnNotificationAvailable()
+        return !NadUtils.hasAltAmbientDisplay(mContext.getApplicationContext()) &&
+                getAmbientConfig().pulseOnNotificationAvailable()
                 ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
