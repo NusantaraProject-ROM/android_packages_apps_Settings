@@ -34,4 +34,10 @@
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 
+    <!-- Custom ambient display -->
+    <string name="ambient_display_category">Ambient display</string>
+    <string name="ambient_display_custom_title">Custom options</string>
+    <string name="ambient_display_custom_summary">Wake screen with notifications and various gestures</string>
+    <string name="lockscreen_settings_category">General</string>
+
 </resources>
