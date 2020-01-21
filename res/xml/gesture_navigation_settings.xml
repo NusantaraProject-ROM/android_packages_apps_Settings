@@ -77,12 +77,6 @@
         android:key="other_controls_category"
         android:title="@string/other_controls_title">
 
-        <com.nusantara.support.preferences.SystemSettingSwitchPreference
-            android:key="fullscreen_gestures"
-            android:title="@string/fullscreen_gestures_title"
-            android:summary="@string/fullscreen_gestures_summary"
-            android:defaultValue="false" />
-
         <com.android.settings.widget.LabeledSeekBarPreference
             android:key="gesture_navbar_length_preference"
             android:title="@string/gesture_navbar_length_title"
@@ -107,6 +101,17 @@
             settings:textStart="@string/highest_label"
             settings:textEnd="@string/lower_label"/>
 
+        <com.nusantara.support.preferences.SystemSettingSwitchPreference
+            android:key="fullscreen_gestures"
+            android:title="@string/fullscreen_gestures_title"
+            android:summary="@string/fullscreen_gestures_summary"
+            android:defaultValue="false" />
+
+        <com.nusantara.support.preferences.SecureSettingSwitchPreference
+            android:key="show_back_arrow_gesture"
+            android:title="@string/back_gesture_arrow_message"
+            android:summary="@string/back_gesture_arrow_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>
 

@@ -291,4 +291,8 @@
     <string name="columbus_setting_enable_switch_title">Use Quick Tap</string>
     <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
     <string name="columbus_summary">%1$s / %2$s</string>
+
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_message">Back gesture animation</string>
+    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture</string>
 </resources>
