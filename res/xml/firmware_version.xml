@@ -32,11 +32,18 @@
 
     <!-- Nusantara version -->
     <Preference
-         android:key="nad_version"
-         android:title="@string/nad_version"
-         android:summary="@string/summary_placeholder"
-         settings:enableCopying="true"
-         settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraVersionPreferenceController"/>
+        android:key="nad_version"
+        android:title="@string/nad_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraVersionPreferenceController"/>
+
+    <!-- Nusantara maintainer -->
+    <Preference
+        android:key="maintainer"
+        android:title="@string/maintainer"
+        android:summary="@string/maintainer_name"
+        settings:enableCopying="true" />
 
     <!-- Changelog -->
     <Preference
@@ -44,14 +51,6 @@
         android:title="@string/changelog_title"
         android:summary="@string/changelog_summary"
         android:fragment="com.android.settings.du.Changelog" />
-
-    <!-- Nusantara maintainer -->
-    <Preference
-        android:key="maintainer"
-        android:title="@string/maintainer"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference
