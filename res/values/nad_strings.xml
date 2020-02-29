@@ -40,4 +40,6 @@
     <string name="ambient_display_custom_summary">Wake screen with notifications and various gestures</string>
     <string name="lockscreen_settings_category">General</string>
 
+    <!-- Mobile data panel -->
+    <string name="cellular_data_title">Mobile data</string>
 </resources>
