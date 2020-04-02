@@ -3433,6 +3433,13 @@
                 android:resource="@string/nusantarawings_summary"/>
         </activity>
 
+        <!-- NAD Team dialog -->
+        <activity android:name="com.nusantara.wings.fragments.team.TeamActivity"
+                  android:taskAffinity=""
+                  android:parentActivityName="Settings"
+                  android:theme="@style/TeamDialog"
+                  android:label="@string/dialog_team_title" />
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
