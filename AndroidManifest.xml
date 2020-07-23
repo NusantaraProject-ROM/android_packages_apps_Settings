@@ -3379,13 +3379,6 @@
                        android:resource="@string/du_themes_summary"/>
         </activity>
 
-        <!-- DU Team dialog -->
-        <activity android:name="com.dirtyunicorns.tweaks.fragments.team.TeamActivity"
-                  android:taskAffinity=""
-                  android:parentActivityName="Settings"
-                  android:theme="@style/TeamDialog"
-                  android:label="@string/dialog_team_title" />
-
         <!-- Navbar -->
         <activity
             android:name="com.dirtyunicorns.tweaks.fragments.navbar.BackLongPress"
