@@ -30,14 +30,14 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
-public class CrvsVersionPreferenceController extends BasePreferenceController {
+public class NusantaraVersionPreferenceController extends BasePreferenceController {
 
-    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/Corvus-OS/");
-    private static final String TAG = "crvsDialogCtrl";
-    private static final String CRVS_VERSION_PROPERTY = "ro.du.version";
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/Nusantara-ROM/");
+    private static final String TAG = "nadDialogCtrl";
+    private static final String NAD_VERSION_PROPERTY = "ro.nad.version";
     private final PackageManager mPackageManager = this.mContext.getPackageManager();
 
-    public CrvsVersionPreferenceController(Context context, String preferenceKey) {
+    public NusantaraVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
     }
 
@@ -46,9 +46,9 @@ public class CrvsVersionPreferenceController extends BasePreferenceController {
     }
 
     public CharSequence getSummary() {
-        String crvs = SystemProperties.get(CRVS_VERSION_PROPERTY,
+        String nusantara = SystemProperties.get(NAD_VERSION_PROPERTY,
                 mContext.getString(R.string.device_info_default));
-        return crvs;
+        return nusantara;
     }
 
     public boolean handlePreferenceTreeClick(Preference preference) {

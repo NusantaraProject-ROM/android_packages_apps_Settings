@@ -15,10 +15,10 @@
     <!-- Manage applications, package string displayed in app snippet -->
     <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
 
-    <!-- About phone screen, Corvus version -->
-    <string name="crvs_version">Corvus version</string>
-    <string name="crvs_version_default">Unknown</string>
-    <string name="keywords_corvus_version">corvus version</string>
+    <!-- About phone screen, Nusantara version -->
+    <string name="nad_version">Nusantara version</string>
+    <string name="nad_version_default">Unknown</string>
+    <string name="keywords_corvus_version">nad version</string>
 
     <!-- Fingerprint location message - default -->
     <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Locate the fingerprint sensor on the front of your 

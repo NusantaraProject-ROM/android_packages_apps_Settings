@@ -63,7 +63,7 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
 
 include frameworks/base/packages/SettingsLib/common.mk
 include frameworks/base/packages/SettingsLib/search/common.mk
-include vendor/du/support/common.mk
+include vendor/nusantara/support/common.mk
 
 include $(BUILD_PACKAGE)
 

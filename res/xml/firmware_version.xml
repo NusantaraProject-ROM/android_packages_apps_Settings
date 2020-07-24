@@ -22,10 +22,6 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-<PreferenceScreen
-    android:layout="@layout/crvs_logo_layout"
-    android:key="crvs_logo" />
-
     <!--Android version-->
     <Preference
         android:key="os_firmware_version"
@@ -34,13 +30,13 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- Corvus version -->
+    <!-- Nusantara version -->
     <Preference
-         android:key="crvs_version"
-         android:title="@string/crvs_version"
+         android:key="nad_version"
+         android:title="@string/nad_version"
          android:summary="@string/summary_placeholder"
          settings:enableCopying="true"
-         settings:controller="com.android.settings.deviceinfo.firmwareversion.CrvsVersionPreferenceController"/>
+         settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraVersionPreferenceController"/>
 
     <!-- Changelog -->
     <Preference
