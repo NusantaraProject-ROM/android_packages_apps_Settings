@@ -22,4 +22,9 @@
     <!-- Density options -->
     <string name="density_category">Density options</string>
 
+    <!-- Battery Health -->
+    <string name="config_batCurCap"></string>
+    <string name="config_batDesCap"></string>
+    <bool name="config_supportBatteryHealth">true</bool>
+
 </resources>
