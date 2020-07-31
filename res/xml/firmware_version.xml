@@ -45,13 +45,6 @@
         android:summary="@string/maintainer_name"
         settings:enableCopying="true" />
 
-    <!-- Changelog -->
-    <Preference
-        android:key="changelog"
-        android:title="@string/changelog_title"
-        android:summary="@string/changelog_summary"
-        android:fragment="com.android.settings.du.Changelog" />
-
     <!-- Security patch -->
     <Preference
         android:key="security_key"
