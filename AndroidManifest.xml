@@ -3364,6 +3364,13 @@
                 android:value="com.dirtyunicorns.tweaks.fragments.GamingMode" />
         </activity>
 
+        <!-- DU Team dialog -->
+        <activity android:name="com.dirtyunicorns.tweaks.fragments.team.TeamActivity"
+                  android:taskAffinity=""
+                  android:parentActivityName="Settings"
+                  android:theme="@style/TeamDialog"
+                  android:label="@string/dialog_team_title" />
+
         <!-- Navbar -->
         <activity
             android:name="com.dirtyunicorns.tweaks.fragments.navbar.BackLongPress"
