@@ -166,10 +166,6 @@ phone.</string>
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Themes -->
-    <string name="du_themes_title">Themes</string>
-    <string name="du_themes_summary">Life is like a box of crayons..</string>
-
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Vibrate for notifications</string>
 
