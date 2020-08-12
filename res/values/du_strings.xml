@@ -300,4 +300,7 @@ phone.</string>
     <string name="clipboard_toast_info_disabled">Don\'t show any alerts</string>
     <string name="clipboard_toast_info_show_important">Show only important alerts</string>
     <string name="clipboard_toast_info_show_all">Show all access alerts</string>
+
+    <!-- Custom device hostname -->
+    <string name="device_hostname">Device hostname</string>
 </resources>
