@@ -293,6 +293,9 @@ phone.</string>
     <string name="sbc_hd_priority_title">SBC HD audio</string>
     <string name="sbc_hd_priority_summary">Whether to use Dual Channel mode for SBC codec by default</string>
 
-    <!-- Clipboard toast toggle -->
-    <string name="show_clipboard_toast">Show clipboard access toast</string>
+    <!-- Clipboard toast info -->
+    <string name="clipboard_toast_info_title">Clipboard access alerts</string>
+    <string name="clipboard_toast_info_disabled">Don\'t show any alerts</string>
+    <string name="clipboard_toast_info_show_important">Show only important alerts</string>
+    <string name="clipboard_toast_info_show_all">Show all access alerts</string>
 </resources>
