@@ -21,6 +21,10 @@
     android:title="@string/display_settings"
     settings:keywords="@string/keywords_display">
 
+   <Preference
+        android:key="display_animation"
+        android:layout="@layout/display_animation" />
+
     <Preference
         android:key="lockscreen_from_display_settings"
         android:title="@string/lockscreen_settings_title"
