@@ -120,6 +120,7 @@
 
     <com.nusantara.support.preferences.HostnamePreference
         android:key="device_hostname"
+        android:icon="@drawable/ic_hostname"
         android:title="@string/device_hostname"
         android:dialogTitle="@string/device_hostname"
         android:positiveButtonText="@string/wifi_save"
