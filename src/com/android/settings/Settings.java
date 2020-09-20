@@ -244,4 +244,5 @@ public class Settings extends SettingsActivity {
      * Activity for Nusantara Wings
      */
     public static class NusantaraWingsActivity extends SettingsActivity { /* empty */ }
+    public static class ThemesActivity extends SettingsActivity { /* empty */ }
 }
