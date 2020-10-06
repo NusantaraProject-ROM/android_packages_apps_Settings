@@ -3462,7 +3462,7 @@
                 android:resource="@string/nusantarawings_summary"/>
         </activity>
 
-        <!-- Quick Settings -->
+        <!-- Themes -->
         <activity android:name="Settings$ThemesActivity"
                   android:label="@string/themes_title"
                   android:taskAffinity="com.android.settings" >
@@ -3472,6 +3472,18 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.nusantara.wings.fragments.system.Themes" />
+        </activity>
+
+        <!-- Qs Header -->
+        <activity android:name="Settings$QsHeaderActivity"
+                  android:label="@string/status_bar_custom_header_title"
+                  android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.nusantara.wings.fragments.statusbar.QsHeader" />
         </activity>
 
         <!-- NAD Team dialog -->
