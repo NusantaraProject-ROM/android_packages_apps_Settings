@@ -246,4 +246,5 @@ public class Settings extends SettingsActivity {
      */
     public static class NusantaraWingsActivity extends SettingsActivity { /* empty */ }
     public static class ThemesActivity extends SettingsActivity { /* empty */ }
+    public static class QsHeaderActivity extends SettingsActivity { /* empty */ }
 }
