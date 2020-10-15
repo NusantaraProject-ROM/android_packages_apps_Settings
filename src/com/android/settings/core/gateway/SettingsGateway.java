@@ -164,7 +164,6 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.nusantara.wings.NusantaraWings;
 import com.nusantara.wings.fragments.system.Themes;
 import com.nusantara.wings.fragments.statusbar.QsHeader;
-import com.nusantara.wings.fragments.hardware.ButtonBrightness;
 
 public class SettingsGateway {
 
@@ -317,7 +316,6 @@ public class SettingsGateway {
             NusantaraWings.class.getName(),
             Themes.class.getName(),
             QsHeader.class.getName(),
-            ButtonBrightness.class.getName(),
             RunningServices.class.getName()
     };
 
@@ -361,7 +359,6 @@ public class SettingsGateway {
             Settings.NusantaraWingsActivity.class.getName(),
             Settings.ThemesActivity.class.getName(),
             Settings.QsHeaderActivity.class.getName(),
-            Settings.ButtonBrightnessActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
     };
 }
