@@ -163,9 +163,9 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.nusantara.wings.NusantaraWings;
 import com.nusantara.wings.fragments.system.Themes;
-import com.nusantara.wings.fragments.statusbar.QsHeader;
 import com.nusantara.wings.fragments.system.GamingMode;
-
+import com.nusantara.wings.fragments.system.HeadsUpOptions;
+import com.nusantara.wings.fragments.statusbar.QsHeader;
 public class SettingsGateway {
 
     /**
@@ -318,7 +318,8 @@ public class SettingsGateway {
             Themes.class.getName(),
             QsHeader.class.getName(),
             RunningServices.class.getName(),
-            GamingMode.class.getName()
+            GamingMode.class.getName(),
+            HeadsUpOptions.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -363,5 +364,6 @@ public class SettingsGateway {
             Settings.QsHeaderActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.GamingModeActivity.class.getName(),
+            Settings.HeadsUpOptionsActivity.class.getName(),
     };
 }
