@@ -72,4 +72,8 @@
     <string name="navbar_length">Gesture bar length</string>
     <string name="hidden_label">Hidden</string>
     <string name="long_label">Long</string>
+
+    <!-- Back gesture settings -->
+    <string name="back_gesture_arrow_title">Back arrow animation</string>
+    <string name="back_gesture_arrow_summary">Hide arrow with back gesture</string>
 </resources>

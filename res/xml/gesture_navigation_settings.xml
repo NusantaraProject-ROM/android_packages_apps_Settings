@@ -55,5 +55,10 @@
         settings:textStart="@string/hidden_label"
         settings:textEnd="@string/long_label"/>
 
-</PreferenceScreen>
+    <com.nusantara.support.preferences.SecureSettingSwitchPreference
+        android:key="hide_back_arrow_gesture"
+        android:title="@string/back_gesture_arrow_title"
+        android:summary="@string/back_gesture_arrow_summary"
+        android:defaultValue="false" />
 
+</PreferenceScreen>
