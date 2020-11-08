@@ -169,6 +169,7 @@ import com.nusantara.wings.fragments.system.GamingMode;
 import com.nusantara.wings.fragments.system.HeadsUpOptions;
 import com.nusantara.wings.fragments.statusbar.QsHeader;
 import com.nusantara.wings.fragments.hardware.PulseSettings;
+import com.nusantara.wings.fragments.hardware.ButtonBrightness;
 
 public class SettingsGateway {
 
@@ -327,6 +328,7 @@ public class SettingsGateway {
             GamingMode.class.getName(),
             HeadsUpOptions.class.getName(),
             PulseSettings.class.getName(),
+            ButtonBrightness.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -370,6 +372,7 @@ public class SettingsGateway {
             Settings.NusantaraCatActivity.class.getName(),
             Settings.ThemesActivity.class.getName(),
             Settings.QsHeaderActivity.class.getName(),
+            Settings.ButtonBrightnessActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.GamingModeActivity.class.getName(),
             Settings.HeadsUpOptionsActivity.class.getName(),
