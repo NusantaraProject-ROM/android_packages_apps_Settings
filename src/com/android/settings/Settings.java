@@ -249,5 +249,4 @@ public class Settings extends SettingsActivity {
     public static class QsHeaderActivity extends SettingsActivity { /* empty */ }
     public static class GamingModeActivity extends SettingsActivity { /* empty */ }
     public static class HeadsUpOptionsActivity extends SettingsActivity { /* empty */ }
-    public static class ButtonBrightnessActivity extends SettingsActivity { /* empty */ }
 }
