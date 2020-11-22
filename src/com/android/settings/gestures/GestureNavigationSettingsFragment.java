@@ -51,10 +51,20 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     private static final String RIGHT_EDGE_SEEKBAR_KEY = "gesture_right_back_sensitivity";
     private static final String GESTURE_BAR_LENGTH_KEY = "gesture_navbar_length";
     private static final String DEADZONE_SEEKBAR_KEY = "gesture_back_deadzone";
+    private static final String GESTURE_BAR_RADIUS_KEY = "gesture_navbar_radius";
+    private static final String GESTURE_BAR_MARGIN_KEY = "gesture_navbar_margin";
 
     private static final String LONG_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.long";
     private static final String MEDIUM_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.medium";
     private static final String HIDDEN_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.hidden";
+
+    private static final String LOW_RADIUS_PKG = "com.custom.overlay.systemui.gestural.radius.low";
+    private static final String VERY_LOW_RADIUS_PKG = "com.custom.overlay.systemui.gestural.radius.verylow";
+    private static final String HIDDEN_RADIUS_PKG = "com.custom.overlay.systemui.gestural.radius.hidden";
+
+    private static final String LOW_MARGIN_PKG = "com.custom.overlay.systemui.gestural.margin.low";
+    private static final String HEIGHT_MARGIN_PKG = "com.custom.overlay.systemui.gestural.margin.height";
+    private static final String NULL_MARGIN_PKG = "com.custom.overlay.systemui.gestural.margin.null";
 
     private IOverlayManager mOverlayService;
 
@@ -91,13 +101,14 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         initSeekBarPreference(LEFT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(RIGHT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(GESTURE_BAR_LENGTH_KEY);
+        initSeekBarPreference(GESTURE_BAR_RADIUS_KEY);
+        initSeekBarPreference(GESTURE_BAR_MARGIN_KEY);
         initDeadzoneSeekBarPreference(DEADZONE_SEEKBAR_KEY);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
         mWindowManager.addView(mIndicatorView, mIndicatorView.getLayoutParams(
                 getActivity().getWindow().getAttributes()));
     }
@@ -146,10 +157,17 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
             case GESTURE_BAR_LENGTH_KEY:
                 settingsKey = Settings.Secure.GESTURE_NAVBAR_LENGTH;
                 break;
+            case GESTURE_BAR_RADIUS_KEY:
+                settingsKey = Settings.Secure.GESTURE_NAVBAR_RADIUS;
+                break;
+            case GESTURE_BAR_MARGIN_KEY:
+                settingsKey = Settings.Secure.GESTURE_NAVBAR_MARGIN;
+                break;
             default:
                 settingsKey = "";
                 break;
         }
+
         float initScale = 0;
         if (settingsKey != "") {
             initScale = Settings.Secure.getFloat(
@@ -171,20 +189,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         pref.setProgress(minDistanceIndex);
 
-        if (key != GESTURE_BAR_LENGTH_KEY) {
-            pref.setOnPreferenceChangeListener((p, v) -> {
-                final int width = (int) (mDefaultBackGestureInset * mBackGestureInsetScales[(int) v]);
-                mIndicatorView.setIndicatorWidth(width, key == LEFT_EDGE_SEEKBAR_KEY);
-                return true;
-            });
-
-            pref.setOnPreferenceChangeStopListener((p, v) -> {
-                mIndicatorView.setIndicatorWidth(0, key == LEFT_EDGE_SEEKBAR_KEY);
-                final float scale = mBackGestureInsetScales[(int) v];
-                Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, scale);
-                return true;
-            });
-        } else {
+        if (key == GESTURE_BAR_LENGTH_KEY) {
             pref.setOnPreferenceChangeListener((p, v) -> {
                 switch((int) v) {
                     case 0:
@@ -223,6 +228,104 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                         break;
                 }
                 Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, (int) v);
+                return true;
+            });
+        } else if (key == GESTURE_BAR_RADIUS_KEY) {
+            pref.setOnPreferenceChangeListener((p, v) -> {
+                switch((int) v) {
+                    case 0:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabled(HIDDEN_RADIUS_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(VERY_LOW_RADIUS_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_RADIUS_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 1:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(HIDDEN_RADIUS_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(VERY_LOW_RADIUS_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_RADIUS_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 2:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(VERY_LOW_RADIUS_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_RADIUS_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 3:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(LOW_RADIUS_PKG, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    }
+               Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, (int) v);
+               return true;
+             });
+        } else if (key == GESTURE_BAR_MARGIN_KEY) {
+            pref.setOnPreferenceChangeListener((p, v) -> {
+                switch((int) v) {
+                    case 0:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NULL_MARGIN_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_MARGIN_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(HEIGHT_MARGIN_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 1:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(LOW_MARGIN_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(HEIGHT_MARGIN_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 2:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabled(HEIGHT_MARGIN_PKG, false, USER_CURRENT);
+
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 3:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(HEIGHT_MARGIN_PKG, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    }
+               Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, (int) v);
+               return true;
+              });
+        } else {
+            pref.setOnPreferenceChangeListener((p, v) -> {
+                final int width = (int) (mDefaultBackGestureInset * mBackGestureInsetScales[(int) v]);
+                mIndicatorView.setIndicatorWidth(width, key == LEFT_EDGE_SEEKBAR_KEY);
+                return true;
+            });
+
+            pref.setOnPreferenceChangeStopListener((p, v) -> {
+                mIndicatorView.setIndicatorWidth(0, key == LEFT_EDGE_SEEKBAR_KEY);
+                final float scale = mBackGestureInsetScales[(int) v];
+                Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, scale);
                 return true;
             });
         }
