@@ -377,4 +377,6 @@
     <string name="pattern_custom">Custom</string>
     <string name="custom_vibration_pattern_title">Set a custom vibration pattern</string>
 
+    <!-- Min refresh rate -->
+    <string name="min_refresh_rate_title">Minimum refresh rate</string>
 </resources>

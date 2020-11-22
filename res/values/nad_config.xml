@@ -28,4 +28,6 @@
     <string name="config_batChargeCycle"></string>
     <bool name="config_supportBatteryHealth">false</bool>
 
+    <!-- Min refresh rate -->
+    <string name="min_refresh_rate_title">Minimum refresh rate</string>
 </resources>
