@@ -54,6 +54,22 @@
         android:selectable="true"
         settings:textStart="@string/hidden_label"
         settings:textEnd="@string/long_label"/>
+        
+    <com.android.settings.widget.LabeledSeekBarPreference
+        android:key="gesture_navbar_radius"
+        android:title="@string/navbar_radius"
+        android:max="3"
+        android:selectable="true"
+        settings:textStart="@string/small_label"
+        settings:textEnd="@string/big_label"/>
+        
+    <com.android.settings.widget.LabeledSeekBarPreference
+        android:key="gesture_navbar_margin"
+        android:title="@string/navbar_margin"
+        android:max="3"
+        android:selectable="true"
+        settings:textStart="@string/low_label"
+        settings:textEnd="@string/height_label"/>
 
     <com.android.settings.widget.LabeledSeekBarPreference
         android:key="gesture_back_deadzone"
