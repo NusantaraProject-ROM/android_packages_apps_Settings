@@ -76,6 +76,8 @@
     <!-- Back gesture settings -->
     <string name="back_gesture_arrow_title">Back arrow animation</string>
     <string name="back_gesture_arrow_summary">Hide arrow with back gesture</string>
+    <string name="back_gesture_haptic_title">Haptic feedback</string>
+    <string name="back_gesture_haptic_summary">Vibrate when the back gesture is triggered</string>
     <string name="smallest_tick_label">Off</string>
     <string name="greatest_tick_label">Half screen</string>
     <string name="gesture_back_deadzone_label">Dead zone</string>
