@@ -163,6 +163,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.nusantara.wings.NusantaraWings;
+import com.nusantara.wings.NusantaraCat;
 import com.nusantara.wings.fragments.system.Themes;
 import com.nusantara.wings.fragments.system.GamingMode;
 import com.nusantara.wings.fragments.system.HeadsUpOptions;
@@ -317,6 +318,7 @@ public class SettingsGateway {
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
             NusantaraWings.class.getName(),
+            NusantaraCat.class.getName(),
             Themes.class.getName(),
             QsHeader.class.getName(),
             RunningServices.class.getName(),
@@ -362,6 +364,7 @@ public class SettingsGateway {
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
             Settings.NusantaraWingsActivity.class.getName(),
+            Settings.NusantaraCatActivity.class.getName(),
             Settings.ThemesActivity.class.getName(),
             Settings.QsHeaderActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
