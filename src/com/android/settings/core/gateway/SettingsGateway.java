@@ -169,6 +169,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 //Nusantara stuff
+import com.nusantara.wings.NusantaraCat;
 import com.nusantara.wings.NusantaraWings;
 
 public class SettingsGateway {
@@ -327,7 +328,8 @@ public class SettingsGateway {
             NetworkSelectSettings.class.getName(),
             AlarmsAndRemindersDetails.class.getName(),
             MediaManagementAppsDetails.class.getName(),
-            NusantaraWings.class.getName()
+            NusantaraWings.class.getName(),
+            NusantaraCat.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -370,5 +372,6 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             //Nusantara stuff
             Settings.NusantaraWingsActivity.class.getName(),
+            Settings.NusantaraCatActivity.class.getName(),
     };
 }
