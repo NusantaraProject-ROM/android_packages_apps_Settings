@@ -128,7 +128,7 @@
 
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
-                  android:theme="@style/Theme.Settings.Home"
+                  android:theme="@style/Theme.Settings.Home.Ios"
                   android:taskAffinity="com.android.settings.root"
                   android:launchMode="singleTask"
                   android:configChanges="keyboard|keyboardHidden">

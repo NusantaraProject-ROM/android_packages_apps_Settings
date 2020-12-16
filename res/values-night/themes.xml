@@ -44,4 +44,11 @@
     <style name="Theme.TabTheme" parent="@style/Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@*android:color/edge_effect_device_default_dark</item>
     </style>
+    
+    <!-- Ios Themes (google and wellbeing included) -->
+    <style name="Theme.Settings.Home.Ios" parent="Theme.Settings.HomeBase.Ios">
+        <item name="colorPrimary">@*android:color/primary_device_default_settings</item>
+        <item name="colorPrimaryDark">@*android:color/primary_dark_device_default_settings</item>
+        <item name="android:colorBackground">?android:attr/colorPrimaryDark</item>
+    </style>
 </resources>

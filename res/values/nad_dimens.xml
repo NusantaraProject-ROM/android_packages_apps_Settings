@@ -13,14 +13,21 @@
 
 <resources>
 
-    <!-- Shortcuts -->
-    <color name="icon_accent_custom">@*android:color/accent_device_default_light</color>
-
-    <color name="settings_panel_background_color">@android:color/white</color>
-    
     <!-- IOS Style -->
-    <color name="divider_color">#cf3d3d3f</color>
-    <color name="card_view_bg">#00ffffff</color>
-
-
+    <dimen name="title_height">55dp</dimen>
+    <dimen name="divider_full_height">0.50dip</dimen>
+    <dimen name="divider_icon_start">56.0dip</dimen>
+    
+    <dimen name="card_view_start_margin">0.0dip</dimen>
+    <dimen name="card_view_end_margin">0.0dip</dimen>
+    <dimen name="card_view_start_padding">15.0dip</dimen>
+    <dimen name="card_view_end_padding">15.0dip</dimen>
+    <dimen name="card_view_end_margin_btn">-8.0dip</dimen>
+    <dimen name="card_height_settings">46.0dip</dimen>
+    
+    <dimen name="text_card_padding_start">12.0dip</dimen>
+    <dimen name="text_card_padding_end">10.0dip</dimen>
+    
+    <dimen name="ios_arrow_right_size">13.0dip</dimen>
+    
 </resources>
