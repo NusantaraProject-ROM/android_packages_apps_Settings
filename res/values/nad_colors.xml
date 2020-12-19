@@ -17,10 +17,14 @@
     <color name="icon_accent_custom">@*android:color/accent_device_default_light</color>
 
     <color name="settings_panel_background_color">@android:color/white</color>
-    
+
     <color name="semi_transparent">#2fffffff</color>
     <color name="bg_color">#ffffffff</color>
     <color name="main_color">#ffDD424A</color>
     <color name="title_color">#ff000000</color>
     <color name="summary_color">#ee000000</color>
+
+    <color name="homepage_google_background">#4285f4</color>
+    <color name="homepage_wellbeing_background">#f06292</color>
+    <color name="homepage_part_background">#425ff4</color>
 </resources>
