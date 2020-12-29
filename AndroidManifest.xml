@@ -3625,5 +3625,16 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.nusantara.wings.fragments.hardware.PulseSettings" />
         </activity>
+        <!-- BatteryBar -->
+        <activity android:name="Settings$BatteryBarActivity"
+                  android:label="@string/battery_bar_title"
+                  android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.nusantara.wings.fragments.statusbar.BatteryBar" />
+        </activity>
     </application>
 </manifest>
