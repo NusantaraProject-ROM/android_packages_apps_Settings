@@ -3601,5 +3601,16 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.nusantara.wings.fragments.system.HeadsUpOptions" />
         </activity>
+        <!-- Pulse -->
+        <activity android:name="Settings$PulseSettingsActivity"
+                  android:label="@string/pulse_settings"
+                  android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.nusantara.wings.fragments.hardware.PulseSettings" />
+        </activity>
     </application>
 </manifest>
