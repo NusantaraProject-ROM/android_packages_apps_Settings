@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2018 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +14,12 @@
      limitations under the License.
 -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_homepage_container"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/main_content_scrollable_container"
@@ -40,13 +38,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/contextual_card_side_margin"
-                android:layout_marginEnd="@dimen/contextual_card_side_margin"/>
+                android:layout_marginEnd="@dimen/contextual_card_side_margin" />
 
             <FrameLayout
                 android:id="@+id/main_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:animateLayoutChanges="true"/>
+                android:animateLayoutChanges="true" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -54,8 +52,30 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:touchscreenBlocksFocus="false"
-        android:keyboardNavigationCluster="false">
-        <include layout="@layout/search_bar"/>
+        android:keyboardNavigationCluster="false"
+        android:touchscreenBlocksFocus="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/search_bar_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/action_bar_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="10.0dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center|start"
+                android:paddingTop="10.0dp"
+                android:text="@string/dashboard_title"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="32.0sp"
+                android:textStyle="bold" />
+
+            <include layout="@layout/search_bar" />
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

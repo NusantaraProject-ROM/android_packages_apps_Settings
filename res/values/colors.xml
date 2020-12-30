@@ -98,6 +98,15 @@
     <color name="homepage_location_background">#2EC7DC</color>
     <color name="homepage_about_background">#6F86DA</color>
     <color name="homepage_privacy_background">#5E97F6</color>
+    <color name="homepage_airplane_background">#559ef3</color>
+    <color name="homepage_wifi_background">#03AE9F</color>
+    <color name="homepage_hotspot_background">#0F9D58</color>
+    <color name="homepage_notification_background">#ffB1AF</color>
+    <color name="homepage_dnd_background">#C14ff6</color>
+    <color name="homepage_timeout_background">#F15efD</color>
+    <color name="homepage_nad_background">#286e9C</color>
+    <color name="homepage_wallpaper_background">#507fC1</color>
+    <color name="homepage_vpn_background">#7F130F</color>
 
     <color name="contextual_card_stroke_color">#1f000000</color>
     <color name="contextual_card_dismissal_background">@*android:color/material_grey_100</color>

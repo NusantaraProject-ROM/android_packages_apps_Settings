@@ -50,7 +50,8 @@
         settings:keywords="@string/keywords_more_mobile_networks"
         settings:userRestriction="no_config_mobile_networks"
         settings:useAdminDisabledSummary="true" />
-
+        
+    <!--
     <com.android.settingslib.RestrictedSwitchPreference
         android:key="airplane_mode"
         android:title="@string/airplane_mode"
@@ -58,7 +59,7 @@
         android:disableDependentsState="true"
         android:order="-5"
         settings:controller="com.android.settings.network.AirplaneModePreferenceController"
-        settings:userRestriction="no_airplane_mode"/>
+        settings:userRestriction="no_airplane_mode"/> -->
 
     <com.android.settingslib.RestrictedPreference
         android:key="manage_mobile_plan"
@@ -67,7 +68,8 @@
         android:order="0"
         settings:userRestriction="no_config_mobile_networks"
         settings:useAdminDisabledSummary="true" />
-
+        
+    <!--
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.TetherSettings"
         android:key="tether_settings"
@@ -77,7 +79,7 @@
         android:summary="@string/summary_placeholder"
         settings:keywords="@string/keywords_hotspot_tethering"
         settings:userRestriction="no_config_tethering"
-        settings:useAdminDisabledSummary="true" />
+        settings:useAdminDisabledSummary="true" /> -->
 
     <com.android.settings.widget.MasterSwitchPreference
         android:fragment="com.android.settings.AllInOneTetherSettings"
@@ -97,7 +99,8 @@
         android:icon="@drawable/ic_settings_data_usage"
         android:order="10"
         android:fragment="com.android.settings.datausage.DataSaverSummary"/>
-
+        
+    <!--
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.vpn2.VpnSettings"
         android:key="vpn_settings"
@@ -106,7 +109,7 @@
         android:order="15"
         android:summary="@string/summary_placeholder"
         settings:userRestriction="no_config_vpn"
-        settings:useAdminDisabledSummary="true" />
+        settings:useAdminDisabledSummary="true" /> -->
 
     <com.android.settings.network.PrivateDnsModeDialogPreference
         android:key="private_dns_settings"

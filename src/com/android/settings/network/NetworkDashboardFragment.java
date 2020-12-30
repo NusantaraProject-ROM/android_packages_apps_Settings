@@ -65,7 +65,7 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         super.onAttach(context);
 
         use(MultiNetworkHeaderController.class).init(getSettingsLifecycle());
-        use(AirplaneModePreferenceController.class).setFragment(this);
+        //use(AirplaneModePreferenceController.class).setFragment(this);
         getSettingsLifecycle().addObserver(use(AllInOneTetherPreferenceController.class));
     }
 
@@ -99,23 +99,23 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         final WifiMasterSwitchPreferenceController wifiPreferenceController =
                 new WifiMasterSwitchPreferenceController(context, metricsFeatureProvider);
 
-        final VpnPreferenceController vpnPreferenceController =
-                new VpnPreferenceController(context);
+        //final VpnPreferenceController vpnPreferenceController =
+                //new VpnPreferenceController(context);
         final PrivateDnsPreferenceController privateDnsPreferenceController =
                 new PrivateDnsPreferenceController(context);
 
         if (lifecycle != null) {
             lifecycle.addObserver(mobilePlanPreferenceController);
             lifecycle.addObserver(wifiPreferenceController);
-            lifecycle.addObserver(vpnPreferenceController);
+            //lifecycle.addObserver(vpnPreferenceController);
             lifecycle.addObserver(privateDnsPreferenceController);
         }
 
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
 
         controllers.add(new MobileNetworkSummaryController(context, lifecycle));
-        controllers.add(new TetherPreferenceController(context, lifecycle));
-        controllers.add(vpnPreferenceController);
+        //controllers.add(new TetherPreferenceController(context, lifecycle));
+        //controllers.add(vpnPreferenceController);
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
         controllers.add(wifiPreferenceController);

@@ -1,24 +1,13 @@
-<!--
-  Copyright (C) 2018 The Android Open Source Project
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="24dp"
-        android:height="24dp"
-        android:viewportWidth="24.0"
-        android:viewportHeight="24.0">
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="vector"
+    android:width="417dp"
+    android:height="417dp"
+    android:viewportWidth="417"
+    android:viewportHeight="417">
     <path
-        android:fillColor="?android:attr/colorPrimary"
-        android:pathData="M3,20h18v-4H3V20zM5,17h2v2H5V17zM3,4v4h18V4H3zM7,7H5V5h2V7zM3,14h18v-4H3V14zM5,11h2v2H5V11z"/>
+        android:name="path_1"
+        android:pathData="M 336.376 354.167 L 45.57 354.167 L 94.181 159.722 L 384.987 159.722 L 336.376 354.167 Z M 246.112 76.388 L 241.487 62.5 L 267.765 62.5 L 272.39 76.388 L 246.112 76.388 Z M 190.556 76.388 L 185.931 62.5 L 212.209 62.5 L 216.834 76.388 L 190.556 76.388 Z M 413.723 137.291 C 411.085 133.916 407.057 131.944 402.779 131.944 L 361.112 131.944 L 361.112 90.277 C 361.112 82.611 354.89 76.388 347.223 76.388 L 301.668 76.388 L 290.945 44.222 C 290.89 44.041 290.751 43.916 290.681 43.736 C 290.334 42.819 289.779 42.069 289.251 41.25 C 288.793 40.513 288.404 39.749 287.82 39.124 C 287.265 38.541 286.584 38.152 285.931 37.666 C 285.14 37.083 284.418 36.458 283.515 36.041 C 282.862 35.749 282.14 35.652 281.431 35.458 C 280.39 35.166 279.376 34.861 278.265 34.819 C 278.098 34.819 277.945 34.722 277.779 34.722 L 55.556 34.722 C 49.57 34.722 44.264 38.541 42.375 44.222 L 31.653 76.388 L 13.889 76.388 C 6.222 76.388 0 82.611 0 90.277 L 0 368.056 C 0 375.737 6.222 381.945 13.889 381.945 L 347.223 381.945 C 353.598 381.945 359.154 377.598 360.696 371.417 L 416.251 149.208 C 417.293 145.055 416.348 140.653 413.723 137.291"
+        android:fillColor="@color/icon_home"
+        android:strokeWidth="1"/>
 </vector>
