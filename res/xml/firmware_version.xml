@@ -29,6 +29,7 @@
 
     <!--Android version-->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="os_firmware_version"
         android:title="@string/firmware_version"
         android:summary="@string/summary_placeholder"
@@ -36,68 +37,71 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- Nusantara version -->
+    <!-- Nusantara version 
     <Preference
          android:key="nusantara_version"
          android:title="@string/nusantara_version"
          android:summary="@string/summary_placeholder"
          settings:enableCopying="true"
-         settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraVersionPreferenceController"/>
+         settings:controller="com.android.settings.deviceinfo.firmwareversion.NusantaraVersionPreferenceController"/>-->
 
-    <!-- Nusantara maintainer -->
+    <!-- Nusantara maintainer 
     <Preference
         android:key="maintainer"
         android:title="@string/maintainer"
         android:summary="@string/maintainer_name"
-        settings:enableCopying="true" />
+        settings:enableCopying="true" />-->
 
     <!-- Security patch -->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="security_key"
         android:title="@string/security_patch"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
-    <!-- Mainline module version
+    <!-- Mainline module version-->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="module_version"
         android:title="@string/module_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>-->
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
 
-    <!-- Baseband -->
+    <!-- Baseband 
     <Preference
         android:key="base_band"
         android:title="@string/baseband_version"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/-->
 
     <!-- Kernel -->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="kernel_version"
         android:title="@string/kernel_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
 
-    <!-- Build 
+    <!-- Build -->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="os_build_number"
         android:title="@string/build_number"
         android:summary="@string/summary_placeholder"
-        android:selectable="false"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>-->
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>
 
     <!-- SELinux -->
     <Preference
+        android:layout="@layout/firmware_preference"
         android:key="selinux_status"
         android:title="@string/selinux_status"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="false"
-        android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SelinuxStatusPreferenceController"/>
 </PreferenceScreen>

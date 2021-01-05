@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="10dp"
+    android:gravity="center">
+
+    <GridLayout
+        android:id="@+id/info_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:rowOrderPreserved="false"
+        android:useDefaultMargins="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/device_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:adjustViewBounds="true"
+            android:antialias="true"
+            android:contentDescription="@null"
+            android:contextClickable="true"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/device_img" />
+
+        <GridLayout
+            android:id="@+id/main_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="10dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="@integer/gridInfo"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROCESSOR"
+                    android:textAllCaps="true"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/processor_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dip"
+                    android:text="Unknown"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHIPSET"
+                    android:textAllCaps="true"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/chipset_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dip"
+                    android:text="Unknown"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STORAGE"
+                    android:textAllCaps="true"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/storage_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dip"
+                    android:text="Unknown"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SCREEN"
+                    android:textAllCaps="true"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/screen_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dip"
+                    android:text="Unknown"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+        </GridLayout>
+
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

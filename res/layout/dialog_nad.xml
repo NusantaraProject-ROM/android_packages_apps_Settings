@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start|center"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="150.0dip"
+                android:layout_height="300.0dip"
+                android:layout_gravity="start|center"
+                android:layout_margin="10.0dip"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/device_nad" />
+
+            <RelativeLayout
+                android:layout_width="150.0dip"
+                android:layout_height="310.0dip"
+                android:layout_gravity="start|center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="10.0dip"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="ROM"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dialog_rom_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Nusantara Project"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Version"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dialog_nad_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="unknown"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Codename"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dialog_nad_codename"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="unknown"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Build Type"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dialog_build_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="unknown"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Build Date"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dialog_build_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="unknown"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="Maintainer"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:focusable="true"
+                            android:text="@string/maintainer_name"
+                            android:textAlignment="gravity"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="start|center"
+                    android:layout_marginBottom="10.0dip"
+                    android:orientation="vertical"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

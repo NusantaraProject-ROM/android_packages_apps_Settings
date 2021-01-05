@@ -4965,4 +4965,5 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"media"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth akan diaktifkan"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Tidak tersedia karena mode waktu tidur diaktifkan"</string>
+    <string name="more_info">Selengkapnya</string>
 </resources>

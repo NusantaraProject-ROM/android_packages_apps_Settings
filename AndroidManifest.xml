@@ -998,7 +998,7 @@
         </activity>
 
         <activity android:name=".Settings$MyDeviceInfoActivity"
-                  android:label="@string/about_settings"
+                  android:label="@string/more_info"
                   android:icon="@drawable/ic_homepage_about">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.DEVICE_INFO_SETTINGS" />
@@ -3475,7 +3475,7 @@
 
         <activity android:name="Settings$MediaControlsSettingsActivity"
                   android:exported="true"
-                  android:label="@strings/media_controls_title">
+                  android:label="@string/media_controls_title">
             <intent-filter>
                 <action android:name="android.settings.ACTION_MEDIA_CONTROLS_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -3689,6 +3689,41 @@
             android:name=".homepage.ThemeDefault"
             android:label="@string/settings_label_launcher"
             android:theme="@style/Theme.Settings.Start">
+        </activity>
+        <!-- About Jr -->
+        <activity android:name=".Settings$AboutJrActivity"
+                  android:label="@string/about_settings"
+                  android:icon="@drawable/ic_homepage_about">
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.DEVICE_INFO_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.deviceinfo.aboutphone.AboutJrFragment" />
+        </activity>
+        <!-- Firmware Version -->
+        <activity android:name=".Settings$FirmwareVersionActivity"
+                  android:label="@string/firmware_version">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings" />
+        </activity>
+        <!-- Hardware Info -->
+        <activity android:name=".Settings$HardwareInfoActivity"
+                  android:label="@string/firmware_version">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.deviceinfo.hardwareinfo.HardwareInfoFragment" />
         </activity>
     </application>
 </manifest>

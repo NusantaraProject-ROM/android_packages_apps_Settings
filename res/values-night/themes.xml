@@ -44,4 +44,29 @@
     <style name="Theme.TabTheme" parent="@style/Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@*android:color/edge_effect_device_default_dark</item>
     </style>
+
+    <!-- Activity Starter -->
+    <style name="Theme.Settings.HomeStart" parent="Theme.AppCompat">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="preferenceTheme">@style/PreferenceThemeStart</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- action bar, needed for search bar icon tinting -->
+        <item name="android:actionBarTheme">@*android:style/ThemeOverlay.DeviceDefault.ActionBar</item>
+
+        <!-- Define this color for material design -->
+        <item name="colorPrimaryVariant">@android:color/white</item>
+    </style>
+    
+    <style name="Theme.Settings.Start" parent="Theme.Settings.HomeStart">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="android:navigationBarDividerColor">@*android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/bg_main</item>
+    </style>
+    
 </resources>

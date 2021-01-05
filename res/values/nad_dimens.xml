@@ -1,4 +1,6 @@
 <resources>
     <dimen name="app_bar_height">220dp</dimen>
     <dimen name="app_bar_height_default">240dp</dimen>
+    <dimen name="img_height">170dp</dimen>
+    <dimen name="img_width">90dp</dimen>
 </resources>

@@ -15,9 +15,10 @@
 
     <color name="settings_panel_background_color">@*android:color/notification_material_background_color</color>
     
-    <color name="bg_color">#FF0D0D0D</color>
-    <color name="main_color">#FF101010</color>
+    <color name="bg_color">?android:attr/colorBackgroundFloating</color>
+    <color name="main_color">#80101010</color>
     <color name="title_color">#ffffffff</color>
     <color name="summary_color">#eeffffff</color>
-
+    <color name="firmware_card_color">#7f1a1a1a</color>
+    
 </resources>

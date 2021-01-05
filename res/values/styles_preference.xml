@@ -32,7 +32,12 @@
         <item name="preferenceCategoryTitleTextColor">?android:attr/textColorSecondary</item>
     </style>
 
-    <style name="SettingsCategoryPreference" parent="Preference.Category.Material" />
+    <style name="SettingsCategoryPreference" parent="Preference.Category.Material" >
+        <item name="android:selectable">false</item>
+        <item name="android:shouldDisableView">false</item>
+        <item name="allowDividerBelow">false</item>
+        <item name="allowDividerAbove">false</item>
+    </style>
 
     <style name="PreferenceTheme.SetupWizard">
         <item name="preferenceFragmentCompatStyle">@style/SetupWizardPreferenceFragmentStyle</item>

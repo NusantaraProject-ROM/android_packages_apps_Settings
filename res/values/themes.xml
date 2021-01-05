@@ -297,4 +297,5 @@
     </style>
     
     <style name="Theme.Settings.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
 </resources>

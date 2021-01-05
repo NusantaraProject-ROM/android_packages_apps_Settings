@@ -15,11 +15,12 @@
      limitations under the License.
 -->
 
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/search_bar"
-    style="@style/SearchBarStyle"
+    app:cardElevation="5.0dp"
+    app:cardCornerRadius="25.0dp"
+    android:layout_margin="@dimen/search_bar_margin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_scrollFlags="scroll|enterAlways">
@@ -31,13 +32,16 @@
         android:background="@drawable/search_bar_selected_background"
         android:contentInsetStartWithNavigation="@dimen/search_bar_content_inset"
         android:navigationIcon="@drawable/ic_homepage_search">
+
         <TextView
+            android:drawableStart="@drawable/ic_homepage_search"
             android:id="@+id/search_action_bar_title"
             style="@style/TextAppearance.SearchBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_menu"/>
     </Toolbar>
+
     <ImageView
         android:id="@+id/account_avatar"
         android:paddingEnd="@dimen/search_bar_avatar_end_padding"

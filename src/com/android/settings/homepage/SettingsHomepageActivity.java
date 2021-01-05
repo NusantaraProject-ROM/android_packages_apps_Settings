@@ -18,7 +18,6 @@ package com.android.settings.homepage;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.android.settings.R;
 import androidx.fragment.app.FragmentActivity;
 
@@ -41,7 +40,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
                         Thread.sleep(400);
                     } catch (Exception e) {
-
                     } finally {
 
                         startActivity(new Intent(SettingsHomepageActivity.this,
@@ -62,7 +60,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
                         Thread.sleep(400);
                     } catch (Exception e) {
-
                     } finally {
 
                         startActivity(new Intent(SettingsHomepageActivity.this,

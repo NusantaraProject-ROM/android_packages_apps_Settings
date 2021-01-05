@@ -27,4 +27,8 @@
     <color name="homepage_google_background">#4285f4</color>
     <color name="homepage_wellbeing_background">#f06292</color>
     <color name="homepage_part_background">#425ff4</color>
+    
+    <color name="icon_tint">?android:attr/textColorPrimary</color>
+    <color name="firmware_card_color">#7fe5e5e5</color>
+
 </resources>

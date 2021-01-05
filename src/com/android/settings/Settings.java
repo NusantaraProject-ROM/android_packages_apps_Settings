@@ -255,4 +255,9 @@ public class Settings extends SettingsActivity {
     public static class PulseSettingsActivity extends SettingsActivity { /* empty */ }
     public static class ButtonBrightnessActivity extends SettingsActivity { /* empty */ }
     public static class BatteryBarActivity extends SettingsActivity { /* empty */ }
+    
+    
+    public static class AboutJrActivity extends SettingsActivity { /* empty */ }
+    public static class FirmwareVersionActivity extends SettingsActivity { /* empty */ }
+    public static class HardwareInfoActivity extends SettingsActivity { /* empty */ }
 }
