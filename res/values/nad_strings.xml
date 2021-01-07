@@ -57,4 +57,7 @@
     <string name="back_height_high_label">Bottom</string>
     <string name="back_options_dialog_title">Options</string>
     <string name="back_height_message">Amount of screen height used as touchable region for back gesture.</string>
+
+    <!-- Display tap to wake custom summary -->
+    <string name="tap_to_wake_summary_nad">Double-tap anywhere on the screen to wake or sleep device</string>
 </resources>
