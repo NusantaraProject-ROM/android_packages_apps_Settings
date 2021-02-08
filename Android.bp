@@ -66,6 +66,7 @@ android_library {
         "VendorSupportLib",
         "bouncy",
         "dynamicanimation",
+        "faceunlock_framework",
     ],
 
     libs: [
