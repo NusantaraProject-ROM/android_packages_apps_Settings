@@ -20,8 +20,7 @@
     
     <!-- IOS Style -->
     <color name="divider_color">#cf3d3d3f</color>
-    <color name="icon_home">#ffffffff</color>
-    <color name="card_view_bg">#ffefefef</color>
+    <color name="card_view_bg">#00ffffff</color>
 
 
 </resources>

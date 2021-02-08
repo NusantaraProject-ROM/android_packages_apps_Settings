@@ -14,7 +14,5 @@
 <resources>
 
     <color name="settings_panel_background_color">@*android:color/notification_material_background_color</color>
-    <color name="card_view_bg">@*android:color/transparent</color>
-    <color name="icon_home">#ffffffff</color>
 
 </resources>

@@ -7550,7 +7550,7 @@
     <!-- Summary for Tap & pay settings, explaning a few important settings under it [CHAR LIMIT=NONE]-->
     <string name="nfc_and_payment_settings_no_payment_installed_summary">To use, first install a payment app</string>
     <!-- Title for setting tile leading to Apps & Notification settings [CHAR LIMIT=40]-->
-    <string name="app_and_notification_dashboard_title">Applications</string>
+    <string name="app_and_notification_dashboard_title">Apps &amp; notifications</string>
     <!-- Summary for Apps & Notification settings, explaining a few important settings under it [CHAR LIMIT=NONE]-->
     <string name="app_and_notification_dashboard_summary">Recent apps, default apps</string>
     <!-- Toast shown when an app in the work profile attempts to open notification settings. The apps in the work profile cannot access notification settings. [CHAR LIMIT=NONE] -->
@@ -10172,7 +10172,7 @@
     <string name="display_dashboard_summary">Wallpaper, sleep, font size</string>
 
     <!-- Summary for Display settings, explaining a few important settings under it [CHAR LIMIT=NONE]-->
-    <string name="display_dashboard_summary_with_style">Styles, font size</string>
+    <string name="display_dashboard_summary_with_style">Styles, wallpapers, screen timeout, font size</string>
 
     <!-- Summary for Display settings, explaining a few important settings under it [CHAR LIMIT=NONE]-->
     <string name="display_dashboard_nowallpaper_summary">Sleep, font size</string>

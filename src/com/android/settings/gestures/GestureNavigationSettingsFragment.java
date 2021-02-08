@@ -247,6 +247,8 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                         try {
                             mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
                             mOverlayService.setEnabledExclusiveInCategory(HIDDEN_RADIUS_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(VERY_LOW_RADIUS_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_RADIUS_PKG, false, USER_CURRENT);
                         } catch (RemoteException re) {
                             throw re.rethrowFromSystemServer();
                         }
@@ -255,6 +257,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                         try {
                             mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
                             mOverlayService.setEnabledExclusiveInCategory(VERY_LOW_RADIUS_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(LOW_RADIUS_PKG, false, USER_CURRENT);
                         } catch (RemoteException re) {
                             throw re.rethrowFromSystemServer();
                         }
