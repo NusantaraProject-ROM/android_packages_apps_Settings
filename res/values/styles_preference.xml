@@ -71,42 +71,5 @@
     <style name="SetupWizardPreferenceFragmentStyle" parent="PreferenceFragment.Material">
         <item name="android:layout">@layout/setup_preference</item>
     </style>
-    
-    <!-- Ios Themes (google and wellbeing included) -->
-    <style name="Preference.Material.Ios" parent="@style/Preference">
-        <item name="android:layout">@layout/ios_preference_material</item>
-        <item name="allowDividerAbove">false</item>
-        <item name="allowDividerBelow">true</item>
-        <item name="cardCornerRadius">0dp</item>
-        <item name="iconSpaceReserved">@bool/config_materialPreferenceIconSpaceReserved</item>
-        <item name="singleLineTitle">false</item>
-    </style>
-    
-    <style name="CardPreference.Ios" parent="@style/Preference.Material.Ios">
-        <item name="android:layout">@layout/card_preference_layout_ios</item>
-    </style>
-
-    <style name="Preference.PreferenceScreen.Ios" parent="@style/Preference.PreferenceScreen">
-        <item name="android:layout">@layout/ios_preference_material</item>
-        <item name="allowDividerAbove">false</item>
-        <item name="allowDividerBelow">true</item>
-        <item name="iconSpaceReserved">@bool/config_materialPreferenceIconSpaceReserved</item>
-    </style>
-    
-    <style name="PreferenceTheme.Ios" parent="@style/PreferenceThemeOverlay.SettingsBase">
-        <item name="apnPreferenceStyle">@style/ApnPreference</item>
-        <item name="preferenceScreenStyle">@style/Preference.PreferenceScreen.Ios</item>
-        <item name="preferenceStyle">@style/Preference.Material.Ios</item>
-        <item name="cardPreferenceStyle">@style/CardPreference.Ios</item>
-        <item name="slicePreferenceStyle">@style/SlicePreference</item>
-        <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>
-        <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
-        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.CategoryTitle
-        </item>
-        <item name="preferenceCategoryStyle">@style/SettingsCategoryPreference</item>
-        <!-- For preference category color -->
-        <item name="preferenceCategoryTitleTextColor">?android:attr/textColorSecondary</item>
-    </style>
-
 
 </resources>

@@ -17,10 +17,5 @@
     <color name="icon_accent_custom">@*android:color/accent_device_default_light</color>
 
     <color name="settings_panel_background_color">@android:color/white</color>
-    
-    <!-- IOS Style -->
-    <color name="divider_color">#cf3d3d3f</color>
-    <color name="card_view_bg">#00ffffff</color>
-
 
 </resources>
