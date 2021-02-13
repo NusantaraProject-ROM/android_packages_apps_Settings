@@ -72,4 +72,34 @@
         <item name="android:layout">@layout/setup_preference</item>
     </style>
 
+    <style name="textregular" parent="@android:style/TextAppearance">
+        <item name="android:textSize">42.0sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    
+    <style name="Preference.Material.Start" parent="@style/Preference">
+        <item name="android:layout">@layout/preference_material_start</item>
+        <item name="allowDividerAbove">false</item>
+        <item name="allowDividerBelow">true</item>
+        <item name="cardCornerRadius">0dp</item>
+        <item name="iconSpaceReserved">@bool/config_materialPreferenceIconSpaceReserved</item>
+        <item name="singleLineTitle">false</item>
+    </style>
+    
+    <style name="PreferenceThemeStart" parent="@style/PreferenceThemeOverlay.SettingsBase">
+        <item name="apnPreferenceStyle">@style/ApnPreference</item>
+        <item name="cardPreferenceStyle">@style/CardPreference</item>
+        <item name="slicePreferenceStyle">@style/SlicePreference</item>
+        <item name="preferenceStyle">@style/Preference.Material.Start</item>
+        <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>
+        <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
+        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.CategoryTitle
+        </item>
+        <item name="preferenceCategoryStyle">@style/SettingsCategoryPreference</item>
+        <!-- For preference category color -->
+        <item name="preferenceCategoryTitleTextColor">?android:attr/textColorSecondary</item>
+    </style>
 </resources>

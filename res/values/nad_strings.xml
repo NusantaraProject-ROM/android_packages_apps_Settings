@@ -182,4 +182,8 @@
 
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
+
+    <!-- More -->
+    <string name="nusantara_project">Nusantara Project</string>
+    <string name="search">Search</string>
 </resources>

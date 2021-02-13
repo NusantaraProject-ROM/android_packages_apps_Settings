@@ -17,5 +17,10 @@
     <color name="icon_accent_custom">@*android:color/accent_device_default_light</color>
 
     <color name="settings_panel_background_color">@android:color/white</color>
-
+    
+    <color name="semi_transparent">#2fffffff</color>
+    <color name="bg_color">#ffffffff</color>
+    <color name="main_color">#ffDD424A</color>
+    <color name="title_color">#ff000000</color>
+    <color name="summary_color">#ee000000</color>
 </resources>

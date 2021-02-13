@@ -128,7 +128,7 @@
 
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
-                  android:theme="@style/Theme.Settings.Home"
+                  android:theme="@style/Theme.Settings.NoActionBar"
                   android:taskAffinity="com.android.settings.root"
                   android:launchMode="singleTask"
                   android:configChanges="keyboard|keyboardHidden">
@@ -3642,6 +3642,17 @@
                 <action android:name="com.nusantara.wings.fragments.lockscreen.FODIconPickerFragment" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        <!-- Theme A -->
+        <activity
+            android:name=".homepage.ThemeA"
+            android:label="@string/settings_label_launcher"
+            android:theme="@style/Theme.Settings.Start">
+        </activity>
+        <!-- Theme Default -->
+        <activity
+            android:name=".homepage.ThemeDefault"
+            android:label="@string/settings_label_launcher"
+            android:theme="@style/Theme.Settings.Start">
         </activity>
     </application>
 </manifest>
