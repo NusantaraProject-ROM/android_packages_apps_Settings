@@ -50,7 +50,7 @@
         android:key="top_level_nusantara"
         android:title="@string/nusantarawings_title"
         android:summary="@string/nusantarawings_summary"
-        android:icon="@drawable/ic_settings_nusantarawings"
+        android:icon="@drawable/ic_homepage_nad"
         android:fragment="com.nusantara.wings.NusantaraWings"
         android:order="-105"/>
 

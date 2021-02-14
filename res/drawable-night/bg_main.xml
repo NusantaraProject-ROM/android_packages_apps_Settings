@@ -3,7 +3,7 @@
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle"
-            android:tint="#ff000000">
+            android:tint="@color/main_color">
 
             <solid android:color="#ff000000" />
 
