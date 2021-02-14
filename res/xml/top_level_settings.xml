@@ -24,7 +24,7 @@
         android:key="top_level_network"
         android:title="@string/network_dashboard_title"
         android:summary="@string/summary_placeholder"
-        android:icon="@drawable/ic_homepage_network"
+        android:icon="@drawable/ic_homepage_wifi"
         android:order="-120"
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>

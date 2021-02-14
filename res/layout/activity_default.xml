@@ -88,13 +88,12 @@
         tools:context=".homepage.ThemeDefault"
         tools:showIn="@layout/activity_default">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/homepage_container2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
+            android:layout_marginTop="15dp">
 
             <FrameLayout
                 android:id="@+id/contextual_cards_content2"
@@ -102,26 +101,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/contextual_card_side_margin"
                 android:layout_marginEnd="@dimen/contextual_card_side_margin" />
-
-            <Button
-                android:id="@+id/theme12"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Theme 1" />
-
-            <Button
-                android:id="@+id/theme22"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="theme default" />
-
+                
             <FrameLayout
+                android:layout_below="@+id/contextual_cards_content2"
                 android:id="@+id/main_content2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:animateLayoutChanges="true" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

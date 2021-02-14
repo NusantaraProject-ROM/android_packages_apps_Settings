@@ -41,7 +41,6 @@ import com.android.settings.overlay.FeatureFactory;
 import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -76,30 +75,6 @@ public class ThemeA extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         //  getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.search_bg));
-
-        Button button1 = findViewById(R.id.theme1);
-        button1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("PrefsFile", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit(); //opens the editor
-                editor.putString("tema", "TEMA_SATU");
-                editor.commit();
-            }
-        });
-
-        Button button2 = findViewById(R.id.theme_default);
-        button2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("PrefsFile", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit(); //opens the editor
-                editor.putString("tema", "TEMA_DEFAULT");
-                editor.commit();
-            }
-        });
         
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
             // Only allow contextual feature on high ram devices.
@@ -168,8 +143,8 @@ public class ThemeA extends AppCompatActivity {
             onBackPressed();
             return true;
         } else if (id == R.id.act_search) {
-                startActivity(FeatureFactory.getFactory(context).getSearchFeatureProvider()
-                        .buildSearchIntent(context /* activity */, SettingsEnums.SETTINGS_HOMEPAGE));
+                startActivity(FeatureFactory.getFactory(this).getSearchFeatureProvider()
+                        .buildSearchIntent(this /* activity */, SettingsEnums.SETTINGS_HOMEPAGE));
             return true;
         }
 

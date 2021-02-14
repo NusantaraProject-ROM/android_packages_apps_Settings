@@ -268,6 +268,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimary">@color/main_color</item>
         <item name="preferenceTheme">@style/PreferenceThemeStart</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 
         <!-- action bar, needed for search bar icon tinting -->
         <item name="android:actionBarTheme">@*android:style/ThemeOverlay.DeviceDefault.ActionBar</item>

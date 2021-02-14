@@ -50,7 +50,6 @@ import com.android.settingslib.drawable.CircleFramedDrawable;
 import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -102,30 +101,6 @@ public class ThemeDefault extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$UserSettingsActivity"));
                 startActivity(intent);
-            }
-        });
-
-        Button button1 = (Button) findViewById(R.id.theme12);
-        button1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("PrefsFile", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit(); //opens the editor
-                editor.putString("tema", "TEMA_SATU");
-                editor.commit();
-            }
-        });
-
-        Button button2 = (Button) findViewById(R.id.theme22);
-        button2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("PrefsFile", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit(); //opens the editor
-                editor.putString("tema", "TEMA_DEFAULT");
-                editor.commit();
             }
         });
         
@@ -223,8 +198,8 @@ public class ThemeDefault extends AppCompatActivity {
             onBackPressed();
             return true;
         } else if (id == R.id.act_search) {
-                startActivity(FeatureFactory.getFactory(context).getSearchFeatureProvider()
-                        .buildSearchIntent(context /* activity */, SettingsEnums.SETTINGS_HOMEPAGE));
+                startActivity(FeatureFactory.getFactory(this).getSearchFeatureProvider()
+                        .buildSearchIntent(this /* activity */, SettingsEnums.SETTINGS_HOMEPAGE));
             return true;
         }
 

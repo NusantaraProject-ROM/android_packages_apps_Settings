@@ -44,40 +44,28 @@
         tools:context=".homepage.ThemeA"
         tools:showIn="@layout/settings_homepage_container">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/homepage_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
+            android:layout_marginTop="15dp">
 
             <FrameLayout
                 android:id="@+id/contextual_cards_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/contextual_card_side_margin"
-                android:layout_marginEnd="@dimen/contextual_card_side_margin"/>
-
-            <Button
-                android:id="@+id/theme1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="theme 1" />
-
-            <Button
-                android:id="@+id/theme_default"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="theme default" />
-
+                android:layout_marginEnd="@dimen/contextual_card_side_margin" />
+                
             <FrameLayout
+                android:layout_below="@+id/contextual_cards_content"
                 android:id="@+id/main_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:animateLayoutChanges="true"/>
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
