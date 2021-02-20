@@ -1,43 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <LinearLayout
-        android:id="@+id/layout_logo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:layout_margin="100dp"
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_settings" />
-
         <TextView
-            android:id="@+id/label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10.0dp"
+            android:fontFamily="@font/manrope_bold"
             android:gravity="center"
-            android:text="@string/settings_label"
-            android:textAllCaps="true"
-            android:textColor="?android:attr/colorAccent"
-            android:textSize="28sp" />
+            android:text="Settings"
+            android:textAlignment="gravity"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="36sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="2dp">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_gravity="start"
+                android:background="?android:textColorPrimary" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:background="?android:textColorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="5.0dp"
+                android:fontFamily="@font/manrope_medium"
+                android:gravity="start"
+                android:minLines="4"
+                android:text="Atur ponsel\nsesuai\nkeinginanmu\nkebutuhanmu"
+                android:textAlignment="textStart"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="8sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="5.0dp"
+                android:fontFamily="@font/manrope_medium"
+                android:gravity="end"
+                android:maxLines="4"
+                android:text="Adjust the phone\naccording to\nyour want\nyour need"
+                android:textAlignment="textEnd"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="8sp" />
+        </FrameLayout>
+
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/p"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/manrope_thin"
+        android:gravity="center"
+        android:letterSpacing="0.7"
+        android:text="Nusantara"
+        android:textAllCaps="true"
+        android:textColor="#f00"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/manrope_medium"
         android:gravity="center"
-        android:text="@string/nusantara_project"
-        android:textColor="?android:attr/colorAccent"
-        android:textSize="18sp" />
+        android:letterSpacing="0.7"
+        android:text="Project"
+        android:textAllCaps="true"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="8sp" />
 </RelativeLayout>
