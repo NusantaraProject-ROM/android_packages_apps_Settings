@@ -39,7 +39,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 public void run() {
                     try {
 
-                        Thread.sleep(200);
+                        Thread.sleep(400);
                     } catch (Exception e) {
 
                     } finally {
@@ -60,7 +60,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 public void run() {
                     try {
 
-                        Thread.sleep(200);
+                        Thread.sleep(400);
                     } catch (Exception e) {
 
                     } finally {

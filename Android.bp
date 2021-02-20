@@ -66,6 +66,7 @@ android_library {
         "VendorSupportLib",
         "faceunlock_utils",
         "bouncy",
+        "dynamicanimation",
     ],
 
     libs: [
@@ -109,5 +110,11 @@ android_library_import {
 android_library_import {
     name: "bouncy",
     aars: ["libs/bouncy-release.aar"],
+    sdk_version: "current",
+}
+
+android_library_import {
+    name: "dynamicanimation",
+    aars: ["libs/dynamicanimation-1.1.0-alpha03.aar"],
     sdk_version: "current",
 }
