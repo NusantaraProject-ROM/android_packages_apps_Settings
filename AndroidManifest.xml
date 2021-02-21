@@ -128,7 +128,7 @@
 
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
-                  android:theme="@style/Theme.Settings.NoActionBar"
+                  android:theme="@style/Theme.Settings.Splash"
                   android:taskAffinity="com.android.settings.root"
                   android:launchMode="singleTask"
                   android:configChanges="keyboard|keyboardHidden">
@@ -174,7 +174,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SubSettings"/>
+        <activity android:name=".SubSettings" />
 
         <activity android:name=".Settings$CreateShortcutActivity"
                   android:label="@string/settings_shortcut">
