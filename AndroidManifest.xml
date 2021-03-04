@@ -3642,6 +3642,7 @@
                 <action android:name="com.nusantara.wings.fragments.lockscreen.FODIconPickerFragment" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
         <!-- Theme A -->
         <activity
             android:name=".homepage.ThemeA"
