@@ -16,4 +16,4 @@
 <com.android.settings.widget.TintDrawable
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:drawable="@drawable/ic_settings_wifi_icon"
-    android:tint="#fff" />
+    android:tint="@color/homepage_network_background" />
