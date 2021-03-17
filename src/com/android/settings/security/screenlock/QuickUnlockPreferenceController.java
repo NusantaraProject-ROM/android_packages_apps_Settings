@@ -22,6 +22,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 
 import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
 import com.android.internal.widget.LockPatternUtils;

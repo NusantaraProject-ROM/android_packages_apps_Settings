@@ -20,6 +20,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 
 import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.core.PreferenceControllerMixin;
