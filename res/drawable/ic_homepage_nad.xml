@@ -27,7 +27,12 @@
     <item
         android:width="@dimen/dashboard_tile_foreground_image_size"
         android:height="@dimen/dashboard_tile_foreground_image_size"
-        android:start="@dimen/dashboard_tile_foreground_image_inset"
-        android:top="@dimen/dashboard_tile_foreground_image_inset"
-        android:drawable="@drawable/ic_settings_nad" />
+        android:gravity="center">
+        <com.android.settings.widget.TintDrawable
+            android:width="@dimen/dashboard_tile_foreground_image_size"
+            android:height="@dimen/dashboard_tile_foreground_image_size"
+            android:gravity="center"
+            android:tint="@color/homepage_google_background"
+            android:drawable="@drawable/ic_settings_nad" />
+    </item>
 </layer-list>

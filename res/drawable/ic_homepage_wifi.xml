@@ -27,7 +27,7 @@
     <item
         android:width="@dimen/dashboard_tile_foreground_image_size"
         android:height="@dimen/dashboard_tile_foreground_image_size"
-        android:start="@dimen/dashboard_tile_foreground_image_inset"
-        android:top="@dimen/dashboard_tile_foreground_image_inset"
+        android:gravity="center"
+        android:tint="@color/homepage_network_background"
         android:drawable="@drawable/ic_settings_wifi" />
 </layer-list>

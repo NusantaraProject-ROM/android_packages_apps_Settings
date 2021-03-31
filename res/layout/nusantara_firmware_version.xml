@@ -68,7 +68,13 @@
                             android:id="@+id/device_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:marqueeRepeatLimit="marquee_forever"
                             android:paddingTop="5.0dip"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
                             android:text="Unknown"
                             android:textColor="?android:textColorPrimary"
                             android:textSize="15.0dip" />

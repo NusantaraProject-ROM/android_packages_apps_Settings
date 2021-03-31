@@ -19,12 +19,12 @@
     android:key="my_device_info_pref_screen"
     android:title="@string/more_info">
 
-        <com.android.settingslib.widget.LayoutPreference
+        <!--com.android.settingslib.widget.LayoutPreference
             android:key="my_device_info_header"
             android:order="0"
             android:layout="@layout/settings_entity_header"
             android:selectable="false"
-            settings:isPreferenceVisible="false"/>
+            settings:isPreferenceVisible="false"/-->
 
         <!-- Device name -->
         <com.android.settings.widget.ValidatedEditTextPreference
@@ -46,7 +46,7 @@
         <!-- Phone number -->
         <Preference
             android:key="phone_number"
-            android:order="4"
+            android:order="54"
             android:selectable="false"
             android:summary="@string/summary_placeholder"
             android:title="@string/status_number"

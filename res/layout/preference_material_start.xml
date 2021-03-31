@@ -12,7 +12,20 @@
     android:paddingEnd="?android:listPreferredItemPaddingEnd"
     android:paddingRight="?android:listPreferredItemPaddingRight">
 
-    <include layout="@layout/image_frame" />
+    <LinearLayout
+        android:id="@id/icon_frame"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="0.0dip"
