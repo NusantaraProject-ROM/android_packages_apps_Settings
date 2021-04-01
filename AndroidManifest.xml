@@ -3564,7 +3564,7 @@
                 android:value="com.nusantara.wings.fragments.statusbar.QsHeader" />
         </activity>
 
-        <!-- Qs Header -->
+        <!-- Button brightness -->
         <activity android:name="Settings$ButtonBrightnessActivity"
                   android:label="@string/button_backlight_title"
                   android:taskAffinity="com.android.settings" >
@@ -3654,7 +3654,6 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
         <!-- Gaming mode -->
         <activity android:name=".Settings$GamingModeActivity"
             android:label="@string/gaming_mode_title"
@@ -3707,6 +3706,14 @@
                   android:label="FOD Icon Picker" >
             <intent-filter>
                 <action android:name="com.nusantara.wings.fragments.lockscreen.FODIconPickerFragment" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- Cutout -->
+        <activity android:name="com.nusantara.wings.fragments.system.CutoutFragment"
+                  android:label="Display Cutout" >
+            <intent-filter>
+                <action android:name="com.nusantara.wings.fragments.system.CutoutFragment" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
