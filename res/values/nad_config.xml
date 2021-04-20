@@ -25,4 +25,8 @@
     <!-- Whether to show min refresh rate in display settings -->
     <bool name="config_show_refresh_rate_controls">false</bool>
 
+    <!-- Settings intelligence suggestions class -->
+    <string name="config_settingsintelligence_suggestions_class" translatable="false">
+        com.android.settings.intelligence.suggestions.SuggestionService
+    </string>
 </resources>
