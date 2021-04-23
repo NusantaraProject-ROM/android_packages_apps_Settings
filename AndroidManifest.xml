@@ -3518,7 +3518,7 @@
             android:permission="android.permission.BLUETOOTH_ADMIN">
             <intent-filter>
                 <action android:name="com.android.settings.action.LAUNCH_BLUETOOTH_PAIRING"/>
-            </intent-filter>/>
+            </intent-filter>
         </receiver>
 
         <!-- Nusantara Wings -->
@@ -3723,6 +3723,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.nusantara.wings.fragments.system.DisplayCutoutForceFullscreenSettings"
+                  android:label="Display Cutout" >
+            <intent-filter>
+                <action android:name="com.nusantara.wings.fragments.system.DisplayCutoutForceFullscreenSettings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Theme A -->
         <activity
             android:name=".homepage.ThemeA"
