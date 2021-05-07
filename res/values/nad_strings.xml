@@ -389,4 +389,8 @@
 
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
+
+    <!-- UI background blur toggle -->
+    <string name="ui_background_blur_title">UI background blur</string>
+    <string name="ui_background_blur_summary">Enable UI background blur (expensive for GPU renderer)</string>
 </resources>

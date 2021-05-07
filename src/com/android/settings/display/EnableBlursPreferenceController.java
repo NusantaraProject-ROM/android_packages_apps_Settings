@@ -62,7 +62,7 @@ public final class EnableBlursPreferenceController extends AbstractPreferenceCon
 
     @Override
     public boolean isAvailable() {
-        return mBlurSupported;
+        return false;
     }
 
     @Override
