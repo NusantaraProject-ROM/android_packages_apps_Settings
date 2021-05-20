@@ -3652,8 +3652,16 @@
         <activity
             android:name=".homepage.ThemeA"
             android:label="@string/settings_label_launcher"
-            android:theme="@style/Theme.Settings.Start">
+            android:theme="@style/Theme.Settings.Accent">
         </activity>
+
+        <!-- Theme B -->
+        <activity
+            android:name=".homepage.ThemeB"
+            android:label="@string/settings_label_launcher"
+            android:theme="@style/Theme.Settings.Home">
+        </activity>
+
         <!-- Theme Default -->
         <activity
             android:name=".homepage.ThemeDefault"

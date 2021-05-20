@@ -34,7 +34,6 @@
         android:navigationIcon="@drawable/ic_homepage_search">
 
         <TextView
-            android:drawableStart="@drawable/ic_homepage_search"
             android:id="@+id/search_action_bar_title"
             style="@style/TextAppearance.SearchBar"
             android:layout_width="wrap_content"

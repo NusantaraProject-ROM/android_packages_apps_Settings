@@ -51,7 +51,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
             };
             splashTread.start();
 
-        } else if (launchinfo.equals("TEMA_DEFAULT")) {
+        } else if (launchinfo.equals("TEMA_DUA")) {
 
             Thread splashTread = new Thread() {
                 @Override
@@ -63,14 +63,33 @@ public class SettingsHomepageActivity extends FragmentActivity {
                     } finally {
 
                         startActivity(new Intent(SettingsHomepageActivity.this,
-                                ThemeDefault.class));
+                                ThemeB.class));
                         finish();
                     }
                 }
 
             };
             splashTread.start();
-        }
+        } else if (launchinfo.equals("TEMA_DEFAULT")) {
+        
+                    Thread splashTread = new Thread() {
+                        @Override
+                        public void run() {
+                            try {
+        
+                                Thread.sleep(400);
+                            } catch (Exception e) {
+                            } finally {
+        
+                                startActivity(new Intent(SettingsHomepageActivity.this,
+                                        ThemeDefault.class));
+                                finish();
+                            }
+                        }
+        
+                    };
+                    splashTread.start();
+                }
 
     }
     
