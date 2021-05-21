@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item>
-        <shape android:shape="rectangle">
+        <shape android:tint="@color/semi_transparent" android:shape="rectangle">
             <corners android:radius="35dp"/>
-            <solid android:color="@color/semi_transparent"/>
+            <solid android:color="?android:attr/colorBackgroundFloating"/>
         </shape>
     </item>
 </layer-list>

@@ -37,8 +37,8 @@
     <com.factor.bouncy.BouncyNestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="15dp"
-        android:background="@drawable/bg"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_accent"
         android:padding="15dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".homepage.ThemeA"
@@ -48,7 +48,7 @@
             android:id="@+id/homepage_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
+            android:layout_marginEnd="2.5dp"
             android:layout_marginTop="15dp">
 
             <FrameLayout
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="155dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="31dp"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="end"
         android:backgroundTint="@color/semi_transparent"

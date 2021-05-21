@@ -287,10 +287,11 @@
     </style>
     
     
-    <style name="Theme.Settings.Accent" parent="Theme.Settings.HomeStart">
+    <style name="Theme.Settings.Accent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="preferenceTheme">@style/PreferenceThemeAccent</item>
+        <item name="colorPrimaryDark">@*android:color/accent_device_default_light</item>
         <item name="android:navigationBarDividerColor">@*android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@drawable/bg_main_accent</item>

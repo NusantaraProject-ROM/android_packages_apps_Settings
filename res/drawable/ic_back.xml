@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item>
-        <shape android:shape="oval">
-           <solid android:color="@color/semi_transparent"/>
+        <shape android:tint="@color/semi_transparent" android:shape="oval">
+           <solid android:color="?android:attr/colorBackgroundFloating"/>
         </shape>
     </item>
     <item >
