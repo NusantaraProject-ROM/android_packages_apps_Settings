@@ -3723,6 +3723,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!-- VolumeStep -->
+        <activity android:name="com.nusantara.wings.fragments.hardware.VolumeSteps"
+                  android:label="VolumeStep" >
+            <intent-filter>
+                <action android:name="com.nusantara.wings.fragments.hardware.VolumeSteps" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity android:name="com.nusantara.wings.fragments.system.DisplayCutoutForceFullscreenSettings"
                   android:label="Display Cutout" >
