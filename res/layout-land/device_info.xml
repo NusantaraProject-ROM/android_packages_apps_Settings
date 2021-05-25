@@ -8,13 +8,17 @@
     android:layout_marginBottom="10dp"
     android:gravity="center">
 
-    <FrameLayout
+    <GridLayout
         android:id="@+id/info_device"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:rowOrderPreserved="false"
+        android:useDefaultMargins="true"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,8 +29,10 @@
             android:id="@+id/device_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
-            android:layout_marginStart="20dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
             android:adjustViewBounds="true"
             android:antialias="true"
             android:contentDescription="@null"
@@ -41,7 +47,7 @@
             android:layout_height="match_parent"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_gravity="end|center"
+            android:layout_gravity="center|end"
             android:layout_marginEnd="10dp"
             android:alignmentMode="alignBounds"
             android:columnCount="@integer/gridInfo"
@@ -139,5 +145,5 @@
         </GridLayout>
 
 
-    </FrameLayout>
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

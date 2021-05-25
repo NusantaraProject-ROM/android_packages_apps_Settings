@@ -412,9 +412,6 @@ public class About extends Preference {
                 getIdentifier("id/uptime", null, context.getPackageName()));
 
 
-        final GridLayout cL = holder.itemView.findViewById(context.getResources().
-                getIdentifier("id/info_device", null, context.getPackageName()));
-
         holder.itemView.setFocusable(selectable);
         holder.itemView.setClickable(selectable);
         holder.setDividerAllowedAbove(false);
@@ -664,9 +661,9 @@ public class About extends Preference {
         setInfo("ro.build.version.security_patch", security);
         kernel.setText(DeviceInfoUtils.getFormattedKernelVersion(context));
         processorInfo.setText(getCpuInfoMap().get("Processor"));
-        screenInfo.setText(getScreenRes(context) + " pixels / " + getDisplaySize(context) + " inch Display");
+        screenInfo.setText(getScreenRes(context) + " pxls / " + getDisplaySize(context) + " inch");
         chipsetInfo.setText(getCpuInfoMap().get("Hardware"));
-        strogeInfo.setText(getBatteryCapacity(context) + "mAh + " + getTotalRAM() + " RAM / " + getTotalInternalMemorySize() + "GB ROM");
+        strogeInfo.setText(getTotalRAM() + " RAM / " + getTotalInternalMemorySize() + "GB ROM");
         setInfoNad("ro.nad.build.version", "ro.nad.build_codename", "ro.nad.build.type", nadVersion);
 
     }
