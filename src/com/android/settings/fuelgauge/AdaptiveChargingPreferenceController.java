@@ -43,7 +43,8 @@ public class AdaptiveChargingPreferenceController extends AbstractPreferenceCont
 
     @Override
     public boolean isAvailable() {
-        return true;
+        final boolean adaptiveAvailable = !mContext.getResources().getBoolean(com.android.internal.R.bool.config_adaptiveChargingAvailable);
+        return adaptiveAvailable;
     }
 
     @Override
