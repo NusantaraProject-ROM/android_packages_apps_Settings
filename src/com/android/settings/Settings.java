@@ -252,14 +252,11 @@ public class Settings extends SettingsActivity {
     public static class NusantaraWingsActivity extends SettingsActivity { /* empty */ }
     public static class NusantaraCatActivity extends SettingsActivity { /* empty */ }
     public static class ThemesActivity extends SettingsActivity { /* empty */ }
-    public static class QsHeaderActivity extends SettingsActivity { /* empty */ }
     public static class GamingModeActivity extends SettingsActivity { /* empty */ }
-    public static class HeadsUpOptionsActivity extends SettingsActivity { /* empty */ }
-    public static class PulseSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class ButtonBrightnessActivity extends SettingsActivity { /* empty */ }
-    public static class BatteryBarActivity extends SettingsActivity { /* empty */ }
-    
-    
+
+    /**
+     * Activity for About phone
+     */
     public static class AboutJrActivity extends SettingsActivity { /* empty */ }
     public static class FirmwareVersionActivity extends SettingsActivity { /* empty */ }
     public static class HardwareInfoActivity extends SettingsActivity { /* empty */ }

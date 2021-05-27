@@ -3558,31 +3558,6 @@
                 android:value="com.nusantara.wings.fragments.system.Themes" />
         </activity>
 
-        <!-- Qs Header -->
-        <activity android:name="Settings$QsHeaderActivity"
-                  android:label="@string/status_bar_custom_header_title"
-                  android:taskAffinity="com.android.settings" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.nusantara.wings.fragments.statusbar.QsHeader" />
-        </activity>
-
-        <!-- Button brightness -->
-        <activity android:name="Settings$ButtonBrightnessActivity"
-                  android:label="@string/button_backlight_title"
-                  android:taskAffinity="com.android.settings" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.nusantara.wings.fragments.hardware.ButtonBrightness" />
-        </activity>
-
-
         <!-- NAD Team dialog -->
         <activity android:name="com.nusantara.wings.fragments.team.TeamActivity"
                   android:taskAffinity=""
@@ -3671,73 +3646,6 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.nusantara.wings.fragments.system.GamingMode" />
-        </activity>
-
-        <!-- HeadsUp -->
-        <activity android:name="Settings$HeadsUpOptionsActivity"
-                  android:label="@string/heads_up_notifications"
-                  android:taskAffinity="com.android.settings" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.nusantara.wings.fragments.system.HeadsUpOptions" />
-        </activity>
-        <!-- Pulse -->
-        <activity android:name="Settings$PulseSettingsActivity"
-                  android:label="@string/pulse_settings"
-                  android:taskAffinity="com.android.settings" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.nusantara.wings.fragments.hardware.PulseSettings" />
-        </activity>
-        <!-- BatteryBar -->
-        <activity android:name="Settings$BatteryBarActivity"
-                  android:label="@string/battery_bar_title"
-                  android:taskAffinity="com.android.settings" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.nusantara.wings.fragments.statusbar.BatteryBar" />
-        </activity>
-        <!-- FOD Icon Picker -->
-        <activity android:name="com.nusantara.wings.fragments.lockscreen.FODIconPickerFragment"
-                  android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
-                  android:label="FOD Icon Picker" >
-            <intent-filter>
-                <action android:name="com.nusantara.wings.fragments.lockscreen.FODIconPickerFragment" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <!-- Cutout -->
-        <activity android:name="com.nusantara.wings.fragments.system.CutoutFragment"
-                  android:label="Display Cutout" >
-            <intent-filter>
-                <action android:name="com.nusantara.wings.fragments.system.CutoutFragment" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <!-- VolumeStep -->
-        <activity android:name="com.nusantara.wings.fragments.hardware.VolumeSteps"
-                  android:label="VolumeStep" >
-            <intent-filter>
-                <action android:name="com.nusantara.wings.fragments.hardware.VolumeSteps" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name="com.nusantara.wings.fragments.system.DisplayCutoutForceFullscreenSettings"
-                  android:label="Display Cutout" >
-            <intent-filter>
-                <action android:name="com.nusantara.wings.fragments.system.DisplayCutoutForceFullscreenSettings" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <!-- Theme A -->
