@@ -171,7 +171,7 @@ import com.nusantara.wings.NusantaraWings;
 import com.nusantara.wings.NusantaraCat;
 import com.nusantara.wings.fragments.system.Themes;
 import com.nusantara.wings.fragments.system.GamingModeSettings;
-
+import com.nusantara.wings.fragments.system.SleepMode;
 import com.nusantara.wings.fragments.OmniJawsSettings;
 
 public class SettingsGateway {
@@ -334,6 +334,7 @@ public class SettingsGateway {
             RunningServices.class.getName(),
             LiveDisplaySettings.class.getName(),
             OmniJawsSettings.class.getName(),
+            SleepMode.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -382,5 +383,6 @@ public class SettingsGateway {
             Settings.GamingModeActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.OmniJawsSettingsActivity.class.getName(),
+            Settings.SleepModeActivity.class.getName(),
     };
 }
