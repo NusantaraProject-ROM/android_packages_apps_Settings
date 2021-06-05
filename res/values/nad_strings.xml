@@ -32,10 +32,6 @@
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
-    <!-- Custom device hostname -->
-    <string name="device_hostname">Device hostname</string>
-
-
     <!-- Custom ambient display -->
     <string name="ambient_display_category">Ambient display</string>
     <string name="ambient_display_custom_title">Custom options</string>

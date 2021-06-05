@@ -130,16 +130,4 @@
         android:summary="@string/summary_placeholder"
         android:order="25"
         settings:controller="com.android.settings.network.AdaptiveConnectivityPreferenceController"/>
-
-    <com.nusantara.support.preferences.HostnamePreference
-        android:key="device_hostname"
-        android:title="@string/device_hostname"
-        android:dialogTitle="@string/device_hostname"
-        android:positiveButtonText="@string/wifi_save"
-        android:negativeButtonText="@string/wifi_cancel"
-        android:selectAllOnFocus="true"
-        android:imeOptions="actionDone"
-        android:inputType="textNoSuggestions"
-        android:order="19"
-        android:persistent="false" />
 </PreferenceScreen>
