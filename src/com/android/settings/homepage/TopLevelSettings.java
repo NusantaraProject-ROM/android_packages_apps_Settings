@@ -125,10 +125,8 @@ public class TopLevelSettings extends DashboardFragment implements
         super.onResume();
         boolean mCustomIcon = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.DASHBOARD_ICONS, 0, UserHandle.USER_CURRENT) == 1;
-        if (mCustomIcon) {
+        if (!mCustomIcon) {
             updateTheme();
-        } else {
-            // nothing todo
         }
     }
 
