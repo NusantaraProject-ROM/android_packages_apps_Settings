@@ -24,7 +24,6 @@
     <string name="nusantara_version_default">未知</string>
     <string name="keywords_nusantara_version">nusantara版本</string>
     <string name="maintainer">Nusantara 维护者</string>
-    <string name="maintainer_name">Genkzsz11</string>
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">点击以显示信息</string>
     <!-- Custom ambient display -->

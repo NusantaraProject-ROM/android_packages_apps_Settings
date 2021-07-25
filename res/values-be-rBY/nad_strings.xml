@@ -24,7 +24,6 @@
     <string name="nusantara_version_default">Невядома</string>
     <string name="keywords_nusantara_version">версія Нусантары</string>
     <string name="maintainer">Зборшчык Нусантары</string>
-    <string name="maintainer_name">Genkzsz11</string>
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Націсніце, каб паказаць інфармацыю</string>
     <!-- Custom ambient display -->

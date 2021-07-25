@@ -24,7 +24,6 @@
     <string name="nusantara_version_default">Không rõ</string>
     <string name="keywords_nusantara_version">phiên bản Nusantara</string>
     <string name="maintainer">Người bảo trì Nusantara</string>
-    <string name="maintainer_name">Genkzsz11</string>
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Nhấn để hiển thị thông tin</string>
     <!-- Custom ambient display -->
