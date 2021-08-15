@@ -170,7 +170,6 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.nusantara.wings.NusantaraWings;
 import com.nusantara.wings.NusantaraCat;
 import com.nusantara.wings.fragments.system.Themes;
-import com.nusantara.wings.fragments.system.GamingMode;
 
 import com.nusantara.wings.fragments.OmniJawsSettings;
 
@@ -331,7 +330,6 @@ public class SettingsGateway {
             NusantaraCat.class.getName(),
             Themes.class.getName(),
             RunningServices.class.getName(),
-            GamingMode.class.getName(),
             LiveDisplaySettings.class.getName(),
             OmniJawsSettings.class.getName(),
     };
@@ -380,7 +378,6 @@ public class SettingsGateway {
             Settings.NusantaraCatActivity.class.getName(),
             Settings.ThemesActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
-            Settings.GamingModeActivity.class.getName(),
             Settings.OmniJawsSettingsActivity.class.getName(),
     };
 }
