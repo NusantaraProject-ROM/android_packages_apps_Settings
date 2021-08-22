@@ -261,4 +261,5 @@ public class Settings extends SettingsActivity {
     public static class HardwareInfoActivity extends SettingsActivity { /* empty */ }
 
     public static class OmniJawsSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class GamingModeActivity extends SettingsActivity { /* empty */ }
 }

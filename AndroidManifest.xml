@@ -3559,6 +3559,18 @@
                 android:value="com.nusantara.wings.fragments.system.Themes" />
         </activity>
 
+        <!-- Gaming Mode -->
+        <activity android:name="Settings$GamingModeActivity"
+                  android:label="@string/gaming_title"
+                  android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.nusantara.wings.fragments.system.GamingModeSettings" />
+        </activity>
+
         <!-- NAD Team dialog -->
         <activity android:name="com.nusantara.wings.fragments.team.TeamActivity"
                   android:taskAffinity=""
