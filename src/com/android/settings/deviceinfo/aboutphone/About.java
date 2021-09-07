@@ -156,63 +156,27 @@ public class About extends Preference {
 
     }
 
-    // total RAM
     public static String getTotalRAM() {
-        RandomAccessFile reader = null;
-        String load = null;
-        DecimalFormat twoDecimalForm = new DecimalFormat("#.##");
-        double totRam = 0;
-        String lastValue = "";
+        String path = "/proc/meminfo";
+        String firstLine = null;
+        int totalRam = 0;
         try {
-            try {
-                reader = new RandomAccessFile("/proc/meminfo", "r");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            load = reader.readLine();
-
-            // Get the Number value from the string
-            Pattern p = Pattern.compile("(\\d+)");
-            Matcher m = p.matcher(load);
-            String value = "";
-            while (m.find()) {
-                value = m.group(1);
-                // System.out.println("Ram : " + value);
-            }
-            reader.close();
-
-            totRam = Double.parseDouble(value);
-            // totRam = totRam / 1024;
-
-            double mb = (totRam / 1024) + 0.1f;
-            double gb = (totRam / 1048576) + 0.1f;
-            double tb = (totRam / 1073741824) + 0.1f;
-            int MB = (int) Math.round(mb);
-            int GB = (int) Math.round(gb);
-            int TB = (int) Math.round(tb);
-
-            if (tb > 1) {
-                lastValue = twoDecimalForm.format(TB).concat("TB");
-            } else if (gb > 1) {
-                lastValue = twoDecimalForm.format(GB).concat("GB");
-            } else if (mb > 1) {
-                lastValue = twoDecimalForm.format(MB).concat("MB");
-            } else {
-                lastValue = twoDecimalForm.format(totRam).concat("KB");
-            }
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            // Streams.close(reader);
+            FileReader fileReader = new FileReader(path);
+            BufferedReader br = new BufferedReader(fileReader, 8192);
+            firstLine = br.readLine().split("\\s+")[1];
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (firstLine != null) {
+            totalRam = (int) Math.ceil((new Float(Float.valueOf(firstLine) / (1024 * 1024)).doubleValue()));
         }
 
-        return lastValue;
+        return totalRam + "GB";
     }
 
     // total Internal
-    public static String getTotalInternalMemorySize() {
+    public static String getTotalROM() {
         File path = Environment.getDataDirectory();
         StatFs stat = new StatFs(path.getPath());
         long blockSize = stat.getBlockSizeLong();
@@ -236,6 +200,7 @@ public class About extends Preference {
         } else aproxStorage = "null";
         return aproxStorage;
     }
+
 
     // system prop
     public static String getSystemProperty(String key) {
@@ -567,68 +532,6 @@ public class About extends Preference {
             }
         });
 
-        /*
-        imgBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (cL.getVisibility() == View.INVISIBLE) {//In transition: (alpha from 0 to 0.5)
-                    lN.setAlpha(1f);
-                    lN.setVisibility(View.VISIBLE);
-                    lN.animate()
-                            .alpha(0f)
-                            .setDuration(2000)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-
-                                    lN.setVisibility(View.INVISIBLE);
-                                    cL.setVisibility(View.VISIBLE);
-                                }
-                            });
-                    cL.setAlpha(0f);
-                    cL.animate()
-                            .alpha(1f)
-                            .setDuration(2000)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    cL.setVisibility(View.VISIBLE);
-                                    lN.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                } else if (cL.getVisibility() == View.VISIBLE) {//In transition: (alpha from 0 to 0.5)
-                    cL.setAlpha(1f);
-                    cL.setVisibility(View.VISIBLE);
-                    cL.animate()
-                            .alpha(0f)
-                            .setDuration(2000)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    cL.setVisibility(View.INVISIBLE);
-                                    lN.setVisibility(View.VISIBLE);
-                                }
-                            });
-
-                    lN.setAlpha(0f);
-                    lN.animate()
-                            .alpha(1f)
-                            .setDuration(2000)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    lN.setVisibility(View.VISIBLE);
-                                    cL.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                } else {
-                    return;
-                }
-
-            }
-        });*/
-
          // selinux status
          if (SELinux.isSELinuxEnforced()) {
          selinux.setText(context.getResources().
@@ -663,7 +566,7 @@ public class About extends Preference {
         processorInfo.setText(getCpuInfoMap().get("Processor"));
         screenInfo.setText(getScreenRes(context) + " pxls / " + getDisplaySize(context) + " inch");
         chipsetInfo.setText(getCpuInfoMap().get("Hardware"));
-        strogeInfo.setText(getTotalRAM() + " RAM / " + getTotalInternalMemorySize() + "GB ROM");
+        strogeInfo.setText(getTotalRAM() + " RAM / " + getTotalROM() + "GB ROM");
         setInfoNad("ro.nad.build.version", "ro.nad.build_codename", "ro.nad.build.type", nadVersion);
 
     }
