@@ -19,23 +19,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="top_level_settings">
+    
+    <com.android.settings.dashboard.TopMenu
+        android:order="-150"/>
 
-    <Preference
+    <!--Preference
         android:key="top_level_nusantara"
         android:title="@string/nusantarawings_title"
         android:summary="@string/nusantarawings_summary"
         android:icon="@drawable/ic_settings_nusantarawings"
         android:fragment="com.nusantara.wings.NusantaraWings"
-        android:order="-105"/>
+        android:order="-105"/-->
 
-    <Preference
+    <!--Preference
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
         android:key="top_level_network"
         android:order="-150"
         android:title="@string/network_dashboard_title"
         android:summary="@string/summary_placeholder"
-        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
+        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/-->
 
     <Preference
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
@@ -62,14 +65,14 @@
         android:title="@string/configure_notification_settings"
         android:summary="@string/notification_dashboard_summary"/>
 
-    <Preference
+    <!--Preference
         android:fragment="com.android.settings.fuelgauge.PowerUsageSummary"
         android:icon="@drawable/ic_settings_battery_white"
         android:key="top_level_battery"
         android:order="-110"
         android:title="@string/power_usage_summary_title"
         android:summary="@string/summary_placeholder"
-        settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/>
+        settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/-->
 
     <Preference
         android:fragment="com.android.settings.deviceinfo.StorageDashboardFragment"
@@ -165,14 +168,14 @@
         android:title="@string/header_category_system"
         android:summary="@string/system_dashboard_summary"/>
 
-    <Preference
+    <!--Preference
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
         android:icon="@drawable/ic_phone_info"
         android:key="top_level_about_device"
         android:order="20"
         android:title="@string/about_settings"
         android:summary="@string/summary_placeholder"
-        settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/-->
 
     <Preference
         android:icon="@drawable/ic_help"
