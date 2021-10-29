@@ -27,6 +27,15 @@
         <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
         <item name="preferenceFragmentCompatStyle">@style/SettingsPreferenceFragmentStyle</item>
     </style>
+    
+    <style name="SettingsPreferenceThemeHome" parent="@style/PreferenceTheme.SettingsLib.Home">
+        <item name="apnPreferenceStyle">@style/ApnPreference</item>
+        <item name="cardPreferenceStyle">@style/CardPreferenceHome</item>
+        <item name="slicePreferenceStyle">@style/SlicePreference</item>
+        <item name="seekBarPreferenceStyle">@style/SettingsSeekBarPreference</item>
+        <item name="twoStateButtonPreferenceStyle">@style/TwoStateButtonPreference</item>
+        <item name="preferenceFragmentCompatStyle">@style/SettingsPreferenceFragmentStyle</item>
+    </style>
 
     <style name="PreferenceTheme.SetupWizard" parent="@style/SettingsPreferenceTheme">
         <item name="preferenceFragmentCompatStyle">@style/SetupWizardPreferenceFragmentStyle</item>
@@ -38,6 +47,10 @@
 
     <style name="CardPreference" parent="@style/Preference.Material">
         <item name="android:layout">@layout/card_preference_layout</item>
+    </style>
+
+    <style name="CardPreferenceHome" parent="@style/Preference.Material">
+        <item name="android:layout">@layout/card_preference_home_layout</item>
     </style>
 
     <style name="SlicePreference" parent="@style/Preference.Material">
