@@ -25,7 +25,7 @@
     android:clickable="false"
     android:orientation="horizontal">
 
-    <include layout="@layout/settingslib_icon_frame"/>
+    <include layout="@layout/settingslib_home_icon_frame"/>
 
     <LinearLayout
         android:layout_width="match_parent"
