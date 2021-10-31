@@ -32,7 +32,7 @@ import com.android.settings.core.BasePreferenceController;
 
 public class NusantaraVersionPreferenceController extends BasePreferenceController {
 
-    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/Nusantara-ROM/");
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://nusantararom.org/");
     private static final String TAG = "nadDialogCtrl";
     private static final String ROM_VERSION_PROP = "ro.nad.build.version";
     private static final String ROM_RELEASETYPE_PROP = "ro.nad.build.type";
