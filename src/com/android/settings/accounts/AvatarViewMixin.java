@@ -16,7 +16,6 @@
 
 package com.android.settings.accounts;
 
-import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -32,7 +31,6 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.android.settings.R;
 import com.android.settings.Settings;
 import com.android.settings.homepage.SettingsHomepageActivity;
-import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.utils.ThreadUtils;
 
 /**
@@ -75,18 +73,8 @@ public class AvatarViewMixin implements LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     public void onStart() {
-        if (hasAccount()) {
-            loadAccount();
-        } else {
-            mAccountName = null;
-            mAvatarView.setImageResource(R.drawable.ic_account_circle_24dp);
-        }
-    }
-
-    private boolean hasAccount() {
-        final Account accounts[] = FeatureFactory.getFactory(
-                mContext).getAccountFeatureProvider().getAccounts(mContext);
-        return (accounts != null) && (accounts.length > 0);
+        mAvatarView.setImageResource(R.drawable.ic_account_circle_24dp);
+        loadAccount();
     }
 
     private void loadAccount() {
