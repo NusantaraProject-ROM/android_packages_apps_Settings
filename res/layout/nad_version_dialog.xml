@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 Nusantara Android Development
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:backgroundTint="?android:attr/colorPrimary"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <!--ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center"
+        android:layout_margin="15.0dip"
+        android:adjustViewBounds="true"
+        android:paddingTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_nusantara" /-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/goGithub"
+            android:layout_width="@dimen/ic_size"
+            android:layout_height="@dimen/ic_size"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@drawable/nad_icon_bg"
+            android:backgroundTint="@android:color/system_neutral1_700"
+            android:padding="10dp"
+            android:src="@drawable/github"
+            android:tint="@android:color/system_accent1_300" />
+
+        <ImageView
+            android:id="@+id/goTwitter"
+            android:layout_width="@dimen/ic_size"
+            android:layout_height="@dimen/ic_size"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@drawable/nad_icon_bg"
+            android:backgroundTint="@android:color/system_neutral1_700"
+            android:padding="10dp"
+            android:src="@drawable/twitter"
+            android:tint="@android:color/system_accent1_300" />
+
+        <ImageView
+            android:id="@+id/goNad"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:src="@drawable/nad_wings"
+            android:tint="@android:color/holo_red_dark" />
+
+        <ImageView
+            android:id="@+id/goTelegram"
+            android:layout_width="@dimen/ic_size"
+            android:layout_height="@dimen/ic_size"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@drawable/nad_icon_bg"
+            android:backgroundTint="@android:color/system_neutral1_700"
+            android:padding="10dp"
+            android:src="@drawable/telegram"
+            android:tint="@android:color/system_accent1_300" />
+
+        <ImageView
+            android:id="@+id/goInstagram"
+            android:layout_width="@dimen/ic_size"
+            android:layout_height="@dimen/ic_size"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@drawable/nad_icon_bg"
+            android:backgroundTint="@android:color/system_neutral1_700"
+            android:padding="10dp"
+            android:src="@drawable/instagram"
+            android:tint="@android:color/system_accent1_300" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="20.0dip"
+        android:paddingTop="5dp"
+        android:paddingEnd="20.0dip"
+        android:paddingBottom="20.0dip">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginTop="10.0dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:text="Version"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/system_accent1_300"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="4dp"
+                android:focusable="true"
+                android:text="Nusantara Version"
+                android:textAlignment="gravity"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dialog_nad_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:text="unknown"
+                android:textAlignment="gravity"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginTop="15.0dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:text="Build"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/system_accent1_300"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="4dp"
+                android:focusable="true"
+                android:text="Build Date"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dialog_build_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:text="unknown"
+                android:textAlignment="gravity"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginTop="15.0dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:text="Story"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/system_accent1_300"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dialog_nad_codename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="4dp"
+                android:focusable="true"
+                android:text="unknown"
+                android:textAlignment="gravity"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/story"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:focusable="true"
+                android:gravity="start"
+                android:justificationMode="inter_word"
+                android:paddingBottom="5dp"
+                android:text="@string/story"
+                android:textAlignment="gravity"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

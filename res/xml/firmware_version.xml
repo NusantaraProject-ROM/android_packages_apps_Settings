@@ -21,11 +21,12 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- Nusantara ROM logo -->
+    <!-- Nusantara ROM logo >
     <com.android.settingslib.widget.LayoutPreference
         android:key="logo_nad"
         android:layout="@layout/nad_logo_layout"
-        android:selectable="false"/>
+        android:selectable="false"/-->
+    <com.android.settings.deviceinfo.firmwareversion.NadFirmwareView/>
 
     <!--Android version-->
     <Preference

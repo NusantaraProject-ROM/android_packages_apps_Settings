@@ -94,4 +94,11 @@
     <string name="volume_skiptrack_screen_title">Skip music tracks</string>
     <string name="volume_skiptrack_title">Volume rocker skip tracks</string>
     <string name="volume_skiptrack_summary">Long press the volume rocker to skip tracks when playing music, even remotely on tv or PC with e.g. Spotify (app must run on the phone and show the notification).</string>
+    
+    <!-- Story of Code Name Source of Wikipedia -->
+    <string name="story">Supriyadi, older spelling Soeprijadi (born 13 April 1923 - disappeared 14 February 1945, declared dead 9 August 1975), was an Indonesian national hero who rebelled against the occupying Japanese in 1945</string>
+
+    <!-- Overlay for maintener -->
+    <string name="github_username">703joko</string>
+    <string name="telegram_username">jrinfected</string>
 </resources>
