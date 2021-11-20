@@ -1934,6 +1934,11 @@
             android:exported="false"
             android:excludeFromRecents="true" />
 
+        <activity android:name=".password.ChooseLockPatternSize"
+            android:exported="false"
+            android:theme="@style/GlifTheme.Light" />
+
+
         <activity android:name=".password.ChooseLockGeneric"
             android:label="@string/lockpassword_choose_lock_generic_header"
             android:excludeFromRecents="true"
