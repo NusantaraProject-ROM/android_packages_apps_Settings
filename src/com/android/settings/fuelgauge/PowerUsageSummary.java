@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings.Global;
+import android.text.TextUtils;
 import androidx.preference.Preference;
 
 import androidx.annotation.VisibleForTesting;
