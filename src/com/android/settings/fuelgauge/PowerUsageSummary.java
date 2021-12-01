@@ -61,6 +61,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
     static final String TAG = "PowerUsageSummary";
 
+    private static final String KEY_BATTERY_HEALTH = "battery_health";
+
     @VisibleForTesting
     static final String KEY_BATTERY_ERROR = "battery_help_message";
     @VisibleForTesting
@@ -71,6 +73,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     static final int BATTERY_TIP_LOADER = 2;
 
+    
+    @VisibleForTesting
+    PowerGaugePreference mBatteryHealthPref;
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting
@@ -89,7 +94,13 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     Preference mHelpPreference;
     @VisibleForTesting
+
     Preference mBatteryUsagePreference;
+    private String mBatteryHealth;
+    private String mBatteryRemainingCapacity;
+    private String mBatteryDesignCapacity;
+
+
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -159,6 +170,28 @@ public class PowerUsageSummary extends PowerUsageBase implements
         mBatteryTipPreferenceController.setFragment(this);
         mBatteryTipPreferenceController.setBatteryTipListener(this::onBatteryTipHandled);
     }
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setAnimationAllowed(true);
+        initFeatureProvider();
+        mBatteryLayoutPref = (LayoutPreference) findPreference(KEY_BATTERY_HEADER);
+        mBatteryView = mBatteryLayoutPref.findViewById(R.id.battery_header_icon);
+        mBatteryView.setDrawableStyle();
+        mScreenUsagePref = (PowerGaugePreference) findPreference(KEY_SCREEN_USAGE);
+        mLastFullChargePref = (PowerGaugePreference) findPreference(
+                KEY_TIME_SINCE_LAST_FULL_CHARGE);
+        mBatteryTemp = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
+        mBatteryHealthPref = (PowerGaugePreference) findPreference(KEY_BATTERY_HEALTH);
+        mBatteryUtils = BatteryUtils.getInstance(getContext());
+
+        mBatteryHealth = getResources().getString(R.string.config_batteryHealthNode);
+        mBatteryRemainingCapacity = getResources().getString(R.string.config_batteryRemainingCapacityNode);
+        mBatteryDesignCapacity = getResources().getString(R.string.config_batteryDesignCapacityNode);
+
+        mBatteryHealthPref.setVisible(getBatteryHealth() != null);
+
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -252,6 +285,16 @@ public class PowerUsageSummary extends PowerUsageBase implements
         }
         // reload BatteryInfo and updateUI
         restartBatteryInfoLoader();
+        updateLastFullChargePreference();
+        mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
+                mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
+        mBatteryTemp.setSummary(
+                com.android.internal.util.custom.Utils.mccCheck(getContext()) ?
+                com.android.internal.util.custom.Utils.batteryTemperature(getContext(), true) + "°F" :
+                com.android.internal.util.custom.Utils.batteryTemperature(getContext(), false) + "°C");
+        if (mBatteryHealthPref != null)
+            mBatteryHealthPref.setSummary(getBatteryHealth() + "%");
+
     }
 
     @VisibleForTesting
@@ -263,6 +306,21 @@ public class PowerUsageSummary extends PowerUsageBase implements
     void setBatteryLayoutPreference(LayoutPreference layoutPreference) {
         mBatteryLayoutPref = layoutPreference;
     }
+
+    String getBatteryHealth() {
+        String health;
+        if (!TextUtils.isEmpty(mBatteryHealth)) {
+            health = readLine(mBatteryHealth);
+        } else if (!TextUtils.isEmpty(mBatteryRemainingCapacity) &&
+                !TextUtils.isEmpty(mBatteryDesignCapacity)) {
+            health = String.valueOf(Integer.parseInt(readLine(mBatteryRemainingCapacity)) * 100 /
+                    Integer.parseInt(readLine(mBatteryDesignCapacity)));
+        } else {
+            health = null;
+        }
+        return health;
+    }
+
 
     @VisibleForTesting
     void initFeatureProvider() {
@@ -320,6 +378,23 @@ public class PowerUsageSummary extends PowerUsageBase implements
     public void onBatteryTipHandled(BatteryTip batteryTip) {
         restartBatteryTipLoader();
     }
+    private static String readLine(String filename) {
+        BufferedReader reader;
+        String line = null;
+        try {
+            reader = new BufferedReader(new FileReader(filename), 256);
+            try {
+                line = reader.readLine();
+            } finally {
+                reader.close();
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return line;
+    }
+
+
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.power_usage_summary);
