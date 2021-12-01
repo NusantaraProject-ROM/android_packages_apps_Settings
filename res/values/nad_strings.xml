@@ -114,4 +114,8 @@
     <string name="volume_button_music_control_title">Playback control</string>
     <string name="volume_button_music_control_summary">When the screen is off, long-pressing the volume keys will skip music tracks</string>
 
+    <!-- Battery health -->
+    <string name="battery_health_title">Battery health</string>
+
+
 </resources>
