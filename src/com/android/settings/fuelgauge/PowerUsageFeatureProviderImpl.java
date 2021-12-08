@@ -37,8 +37,8 @@ import com.android.settings.R;
 
 import com.android.settingslib.utils.PowerUtil;
 
-import java.time.Duration;
 import java.util.ArrayList;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -318,6 +318,11 @@ public class PowerUsageFeatureProviderImpl implements PowerUsageFeatureProvider 
     @Override
     public boolean isChartGraphSlotsEnabled(Context context) {
         return false;
+    }
+
+    @Override
+    public Intent getResumeChargeIntent() {
+        return null;
     }
 
     @Override

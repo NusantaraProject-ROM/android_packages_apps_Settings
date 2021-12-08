@@ -166,6 +166,17 @@ public class NetworkProviderSimListController extends AbstractPreferenceControll
         return false;
     }
 
+    @VisibleForTesting
+    protected List<SubscriptionInfo> getAvailablePhysicalSubscription() {
+        List<SubscriptionInfo> subList = new ArrayList<>();
+        for (SubscriptionInfo info : SubscriptionUtil.getAvailableSubscriptions(mContext)) {
+            if (!info.isEmbedded()) {
+                subList.add(info);
+            }
+        }
+        return subList;
+    }
+
     @Override
     public String getPreferenceKey() {
         return KEY_PREFERENCE_SIM;
