@@ -98,6 +98,7 @@ public class TopMenu extends Preference {
             @Override
             public void onReceive(Context context, Intent intent) {
                 // Get the battery scale
+                context.unregisterReceiver(this);
                 int mProgressStatus = 0;
                 int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
                 int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
@@ -129,7 +130,6 @@ public class TopMenu extends Preference {
 
                 }
             }
-
         }, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
         holder.itemView.setFocusable(selectable);
