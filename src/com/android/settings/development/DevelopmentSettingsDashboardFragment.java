@@ -181,6 +181,11 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
     }
 
     @Override
+    protected boolean shouldSkipForInitialSUW() {
+        return true;
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         registerReceivers();
