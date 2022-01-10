@@ -309,4 +309,7 @@
     <string name="device_reboot_timeout_summary_36hours">36 hours</string>
     <string name="device_reboot_timeout_summary_48hours">48 hours</string>
     <string name="device_reboot_timeout_summary_72hours">72 hours</string>
+
+    <!-- Floating rotation button -->
+    <string name="enable_floating_rotation_button_title">Use floating rotate button</string>
 </resources>
