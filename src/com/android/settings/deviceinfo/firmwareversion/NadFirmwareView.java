@@ -36,10 +36,41 @@ import android.view.View;
 import android.view.LayoutInflater;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.Display;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import android.util.Log;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import android.graphics.Point;
+import android.os.Build;
+import android.os.Environment;
+import android.os.StatFs;
+import android.text.format.DateUtils;
+import android.util.DisplayMetrics;
+
+import java.io.BufferedReader;
+import java.io.RandomAccessFile;
+import java.net.SocketException;
+import java.text.DecimalFormat;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static android.content.ContentValues.TAG;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
@@ -49,6 +80,10 @@ import com.android.settings.R;
 import java.util.Random;
 
 public class NadFirmwareView extends Preference {
+	
+	private static final String POWER_PROFILE_CLASS = "com.android.internal.os.PowerProfile";
+    private static final String FILENAME_PROC_VERSION = "/proc/version";
+    static String aproxStorage;
 
     public NadFirmwareView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -56,6 +91,145 @@ public class NadFirmwareView extends Preference {
                 getIdentifier("layout/nad_firmware_view", null, context.getPackageName()));
 
     }
+    
+    // screen pixels
+    public static String getScreenRes(Context context) {
+
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = windowManager.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y + getNavigationBarHeight(windowManager);
+        return width + " x " + height;
+    }
+
+    private static int getNavigationBarHeight(WindowManager wm) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(metrics);
+        int usableHeight = metrics.heightPixels;
+        wm.getDefaultDisplay().getRealMetrics(metrics);
+        int realHeight = metrics.heightPixels;
+        if (realHeight > usableHeight)
+            return realHeight - usableHeight;
+        else
+            return 0;
+    }
+
+    // screen inch
+    public static String getDisplaySize(Context ctx) {
+        double x = 0, y = 0;
+        int mWidthPixels, mHeightPixels;
+        try {
+            WindowManager windowManager = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
+            Display display = windowManager.getDefaultDisplay();
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            display.getMetrics(displayMetrics);
+            Point realSize = new Point();
+            Display.class.getMethod("getRealSize", Point.class).invoke(display, realSize);
+            mWidthPixels = realSize.x;
+            mHeightPixels = realSize.y;
+            DisplayMetrics dm = new DisplayMetrics();
+            windowManager.getDefaultDisplay().getMetrics(dm);
+            x = Math.pow(mWidthPixels / dm.xdpi, 2);
+            y = Math.pow(mHeightPixels / dm.ydpi, 2);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return String.format(Locale.US, "%.2f", Math.sqrt(x + y));
+    }
+
+    // processor info
+    public static Map<String, String> getCpuInfoMap() {
+        Map<String, String> map = new HashMap<String, String>();
+        try {
+            Scanner s = new Scanner(new File("/proc/cpuinfo"));
+            while (s.hasNextLine()) {
+                String[] vals = s.nextLine().split(": ");
+                if (vals.length > 1) map.put(vals[0].trim(), vals[1].trim());
+            }
+        } catch (Exception e) {
+            Log.e("getCpuInfoMap", Log.getStackTraceString(e));
+        }
+        return map;
+
+    }
+
+    // total ram
+    public static String getTotalRAM() {
+        String path = "/proc/meminfo";
+        String firstLine = null;
+        int totalRam = 0;
+        try {
+            FileReader fileReader = new FileReader(path);
+            BufferedReader br = new BufferedReader(fileReader, 8192);
+            firstLine = br.readLine().split("\\s+")[1];
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (firstLine != null) {
+            totalRam = (int) Math.ceil((new Float(Float.valueOf(firstLine) / (1024 * 1024)).doubleValue()));
+        }
+
+        return totalRam + "GB";
+    }
+
+    // total Internal
+    public static String getTotalROM() {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSizeLong();
+        long totalBlocks = stat.getBlockCountLong();
+        double total = (totalBlocks * blockSize) / 1073741824;
+        int lastval = (int) Math.round(total);
+        if (lastval > 0 && lastval <= 16) {
+            aproxStorage = "16";
+        } else if (lastval > 16 && lastval <= 32) {
+            aproxStorage = "32";
+        } else if (lastval > 32 && lastval <= 64) {
+            aproxStorage = "64";
+        } else if (lastval > 64 && lastval <= 128) {
+            aproxStorage = "128";
+        } else if (lastval > 128 && lastval <= 256) {
+            aproxStorage = "256";
+        } else if (lastval > 256 && lastval <= 512) {
+            aproxStorage = "512";
+        } else if (lastval > 512) {
+            aproxStorage = "512+";
+        } else aproxStorage = "null";
+        return aproxStorage;
+    }
+
+    // battery capacity
+    public static int getBatteryCapacity(Context context) {
+        Object powerProfile = null;
+
+        double batteryCapacity = 0;
+        try {
+            powerProfile = Class.forName(POWER_PROFILE_CLASS)
+                    .getConstructor(Context.class).newInstance(context);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            batteryCapacity = (Double) Class
+                    .forName(POWER_PROFILE_CLASS)
+                    .getMethod("getAveragePower", java.lang.String.class)
+                    .invoke(powerProfile, "battery.capacity");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String str = Double.toString(batteryCapacity);
+        String[] strArray = str.split("\\.");
+        int batteryCapacityInt = Integer.parseInt(strArray[0]);
+
+        return batteryCapacityInt;
+    }
+
 
     // system prop
     public static String getSystemProperty(String key) {
@@ -99,8 +273,9 @@ public class NadFirmwareView extends Preference {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         final boolean selectable = false;
         final Context context = getContext();
-        TextView androidVersion = holder.itemView.findViewById(context.getResources().
-                getIdentifier("id/android_version", null, context.getPackageName()));
+        TextView chipsetInfo = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/cpu", null, context.getPackageName()));
+        chipsetInfo.setSelected(true);
         TextView nadVersion = holder.itemView.findViewById(context.getResources().
                 getIdentifier("id/nad_version", null, context.getPackageName()));
         nadVersion.setSelected(true);
@@ -116,13 +291,48 @@ public class NadFirmwareView extends Preference {
         holder.setDividerAllowedAbove(false);
         holder.setDividerAllowedBelow(false);
 
-        LinearLayout versiAN = holder.itemView.findViewById(context.getResources().
-                getIdentifier("id/l_versi_android", null, context.getPackageName()));
-        versiAN.setClickable(true);
-        versiAN.setOnClickListener(view -> {
-            String[] randomStrings = new String[]{"Android Snow Cone", "Nusantara Android Development", "Android 12", "Material You Design", "Silky Style", "Nusantara Project OS"};
-            Toast.makeText(context.getApplicationContext(), randomStrings[new Random().nextInt(randomStrings.length)], Toast.LENGTH_SHORT).show();
-
+        LinearLayout chipsetIn = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/l_cpu", null, context.getPackageName()));
+        chipsetIn.setClickable(true);
+        chipsetIn.setOnClickListener(view -> {
+            
+            Dialog customDialog = new Dialog(getContext(), R.style.CustomDialog);
+            customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            customDialog.setCanceledOnTouchOutside(true);
+            Window window = customDialog.getWindow();
+            window.setGravity(Gravity.BOTTOM);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            window.getDecorView().setSystemUiVisibility(uiOptions);
+            window.setBackgroundDrawableResource(R.drawable.bottom_sheet_background);
+            window.setDimAmount(0.7F);
+            window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            customDialog.setContentView(context.getResources().
+                    getIdentifier("layout/cpu_layout", null, context.getPackageName()));
+         customDialog.setCancelable(true);
+        
+         TextView deviceInfo  = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/device_codename", null, context.getPackageName()));
+         TextView memoryInfo  = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/memory_info", null, context.getPackageName()));
+         TextView cpuInfo   = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/cpu_info", null, context.getPackageName()));
+         TextView procInfo   = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/proc_info", null, context.getPackageName()));
+         TextView screenInfo   = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/screen_info", null, context.getPackageName()));
+         TextView batteryInfo  = customDialog.findViewById(context.getResources().
+                    getIdentifier("id/batt_info", null, context.getPackageName()));
+            
+            
+            procInfo.setText(getCpuInfoMap().get("Processor"));
+            screenInfo.setText(getScreenRes(context) + " pxls / " + getDisplaySize(context) + " inch");
+            cpuInfo.setText(getCpuInfoMap().get("Hardware"));
+            memoryInfo.setText(getTotalRAM() + " RAM / " + getTotalROM() + "GB ROM");
+            batteryInfo.setText(getBatteryCapacity(context) + " mAh");
+            setInfo("ro.product.device", deviceInfo);
+                    
+         customDialog.show();
+        
         });
 
         LinearLayout lnadVersion = holder.itemView.findViewById(context.getResources().
@@ -153,18 +363,21 @@ public class NadFirmwareView extends Preference {
             dialogNadVer.setText(String.format("v%s", getSystemProperty("ro.nad.build.version")));
             customDialog.setCancelable(true);
 
-            ImageView mGithub = customDialog.findViewById(context.getResources().
-                    getIdentifier("id/goGithub", null, context.getPackageName()));
-            ImageView mTwitter = customDialog.findViewById(context.getResources().
-                    getIdentifier("id/goTwitter", null, context.getPackageName()));
-            ImageView mTelegram = customDialog.findViewById(context.getResources().
-                    getIdentifier("id/goTelegram", null, context.getPackageName()));
-            ImageView mInstagram = customDialog.findViewById(context.getResources().
-                    getIdentifier("id/goInstagram", null, context.getPackageName()));
+            /*
+            *ImageView mGithub = customDialog.findViewById(context.getResources().
+             *      getIdentifier("id/goGithub", null, context.getPackageName()));
+            *ImageView mTwitter = customDialog.findViewById(context.getResources().
+             *      getIdentifier("id/goTwitter", null, context.getPackageName()));
+            *ImageView mTelegram = customDialog.findViewById(context.getResources().
+             *      getIdentifier("id/goTelegram", null, context.getPackageName()));
+            *ImageView mInstagram = customDialog.findViewById(context.getResources().
+             *      getIdentifier("id/goInstagram", null, context.getPackageName()));
+            */
             ImageView mNusantara = customDialog.findViewById(context.getResources().
                     getIdentifier("id/goNad", null, context.getPackageName()));
 
             customDialog.show();
+            /*
             mGithub.setOnClickListener(v1 -> {
                 try {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -201,17 +414,20 @@ public class NadFirmwareView extends Preference {
                     e.printStackTrace();
                 }
             });
+            */
 
             mNusantara.setOnClickListener(v1 -> {
                 ValueAnimator anim = new ValueAnimator();
                 anim.setIntValues(Color.LTGRAY, Color.BLUE, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.RED);
                 anim.setEvaluator(new ArgbEvaluator());
                 anim.addUpdateListener(valueAnimator -> mNusantara.setColorFilter((Integer) valueAnimator.getAnimatedValue()));
+                /*
                 anim.addUpdateListener(valueAnimator -> mInstagram.setColorFilter((Integer) valueAnimator.getAnimatedValue()));
                 anim.addUpdateListener(valueAnimator -> mGithub.setColorFilter((Integer) valueAnimator.getAnimatedValue()));
                 anim.addUpdateListener(valueAnimator -> mTelegram.setColorFilter((Integer) valueAnimator.getAnimatedValue()));
                 anim.addUpdateListener(valueAnimator -> mTwitter.setColorFilter((Integer) valueAnimator.getAnimatedValue()));
-                anim.setDuration(5000);
+                */
+                anim.setDuration(4000);
                 anim.start();
                 anim.addListener(new Animator.AnimatorListener() {
                     @Override
@@ -223,16 +439,18 @@ public class NadFirmwareView extends Preference {
                     public void onAnimationEnd(Animator animator) {
                         try {
                             Intent intent = new Intent(Intent.ACTION_VIEW,
-                                    Uri.parse("https://nusantararom.org/"));
+                                    Uri.parse("https://linktr.ee/nusantararom/"));
                             context.startActivity(intent);
                         } catch (ActivityNotFoundException e) {
                             e.printStackTrace();
                         }
                         anim.cancel();
+                        /*
                         mGithub.setColorFilter(null);
                         mInstagram.setColorFilter(null);
                         mTwitter.setColorFilter(null);
                         mTelegram.setColorFilter(null);
+                        */
                     }
 
                     @Override
@@ -274,9 +492,9 @@ public class NadFirmwareView extends Preference {
         
          TextView devName = customDialog.findViewById(context.getResources().
                     getIdentifier("id/mName", null, context.getPackageName()));
-            ImageView git = customDialog.findViewById(context.getResources().
+            TextView git = customDialog.findViewById(context.getResources().
                     getIdentifier("id/devGithub", null, context.getPackageName()));
-            ImageView tele = customDialog.findViewById(context.getResources().
+            TextView tele = customDialog.findViewById(context.getResources().
                     getIdentifier("id/devTelegram", null, context.getPackageName()));
             
             ImageView mProfile = customDialog.findViewById(context.getResources().
@@ -357,7 +575,7 @@ public class NadFirmwareView extends Preference {
             buildNumber.setSelected(true);
         });
 
-        setInfo("ro.build.version.release", androidVersion);
+        chipsetInfo.setText(getCpuInfoMap().get("Hardware"));
         setInfoNad("ro.nad.build.version", "ro.nad.build_codename", "ro.nad.build.type", nadVersion);
         setInfo("ro.system.build.id", buildNumber);
     }

@@ -18,14 +18,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="10.0dip"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp">
+    android:paddingTop="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_margin="20dp"
+    android:paddingBottom="25dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="12dp">
 
@@ -37,46 +39,81 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="?android:attr/textColorPrimary"
             android:textStyle="bold" />
-            
-        <ImageView
-            android:id="@+id/devGithub"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:tint="@android:color/system_accent1_300"
-            android:backgroundTint="@android:color/system_neutral1_700"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/nad_icon_bg"
-            android:padding="10dp"
-            android:src="@drawable/github" />
 
-        <ImageView
-            android:id="@+id/devTelegram"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_centerVertical="true"
+        <TextView
+            android:id="@+id/m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maintainer"
+            android:layout_below="@+id/mName"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textStyle="normal" />
+            
+        <TextView
+            android:id="@+id/devGithub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/m"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:tint="@android:color/system_accent1_300"
             android:backgroundTint="@android:color/system_neutral1_700"
-            android:layout_marginEnd="20dp"
-            android:layout_toStartOf="@+id/devGithub"
+            android:layout_marginEnd="10.0dp"
+            android:layout_marginTop="5.0dp"
             android:background="@drawable/nad_icon_bg"
-            android:padding="10dp"
-            android:src="@drawable/telegram" />
+            android:paddingTop="8.0dp"
+            android:paddingBottom="8.0dp"
+            android:paddingStart="10.0dp"
+            android:paddingEnd="14.0dp"
+            android:singleLine="true"
+            android:text="Github"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/github" />
+
+        <TextView
+            android:id="@+id/devTelegram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:tint="@android:color/system_accent1_300"
+            android:backgroundTint="@android:color/system_neutral1_700"
+            android:layout_toEndOf="@+id/devGithub"
+            android:layout_below="@+id/m"
+            android:background="@drawable/nad_icon_bg"
+            android:paddingTop="8.0dp"
+            android:singleLine="true"
+            android:layout_marginTop="5.0dp"
+            android:paddingBottom="8.0dp"
+            android:paddingStart="10.0dp"
+            android:paddingEnd="14.0dp"
+            android:text="Telegram"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/telegram" />
 
     </RelativeLayout>
 
-    <com.nusantara.support.helpers.CircularImageView
-        android:id="@+id/mProfile"
-        android:src="@drawable/ava_img"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/nad_l_bg"
+        android:backgroundTint="@android:color/system_neutral1_700"
+        android:padding="25dp"
         android:layout_gravity="center|start"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="20dp"
-        app:civ_border="true"
-        app:civ_border_color="@*android:color/accent_device_default_light"
-        app:civ_border_width="0dp" />
+        android:layout_marginStart="10.0dp"
+        android:layout_marginEnd="15dp">
 
+        <com.nusantara.support.helpers.CircularImageView
+            android:id="@+id/mProfile"
+            android:src="@drawable/ava_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            app:civ_border="true"
+            app:civ_border_color="@*android:color/accent_device_default_light"
+            app:civ_border_width="0dp" />
+        
+    </FrameLayout>
 
 </FrameLayout>

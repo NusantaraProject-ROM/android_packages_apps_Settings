@@ -18,5 +18,9 @@
 
     <!-- Gradient Color -->
     <color name="nad_end_color">#000</color>
+    
+    <!-- About Color -->
+    <color name="background_tint">@android:color/system_accent1_100</color>
+    <color name="content_color">@android:color/system_accent1_700</color>
 
 </resources>

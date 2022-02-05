@@ -24,7 +24,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15.0dip"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="15.0dip"
         android:orientation="vertical">
 
@@ -48,55 +48,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@android:color/system_accent1_700">
-
-                <LinearLayout
-                    android:id="@+id/l_versi_android"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginStart="20.0dip"
-                    android:layout_marginTop="10.0dip"
-                    android:layout_marginEnd="20.0dip"
-                    android:layout_marginBottom="10.0dip"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:tint="@android:color/system_accent1_100"
-                        android:layout_width="35.0dip"
-                        android:layout_height="35.0dip"
-                        android:paddingTop="5.0dip"
-                        android:src="@drawable/ic_android_version" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5.0dip"
-                        android:text="Android Version"
-                        android:textColor="?android:textColorSecondary"
-                        android:textSize="13.0sp" />
-
-                    <TextView
-                        android:id="@+id/android_version"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5.0dip"
-                        android:text="Unknown"
-                        android:textColor="@android:color/system_accent1_100"
-                        android:textSize="15.0dip" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@android:color/system_accent1_700">
+                android:backgroundTint="?android:attr/colorPrimary">
 
                 <LinearLayout
                     android:id="@+id/l_nad_version"
@@ -110,7 +62,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:tint="@android:color/system_accent1_100"
+                        android:tint="@color/content_color"
                         android:layout_width="35.0dip"
                         android:layout_height="35.0dip"
                         android:paddingTop="5.0dip"
@@ -132,11 +84,10 @@
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:marqueeRepeatLimit="marquee_forever"
-                        android:paddingTop="5.0dip"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
                         android:text="Unknown"
-                        android:textColor="@android:color/system_accent1_100"
+                        android:textColor="@color/content_color"
                         android:textSize="15.0dip" />
                 </LinearLayout>
             </LinearLayout>
@@ -150,7 +101,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@android:color/system_accent1_700">
+                android:backgroundTint="?android:attr/colorPrimary">
 
                 <LinearLayout
                     android:id="@+id/l_nama_maintener"
@@ -164,7 +115,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:tint="@android:color/system_accent1_100"
+                        android:tint="@color/content_color"
                         android:layout_width="35.0dip"
                         android:layout_height="35.0dip"
                         android:paddingTop="5.0dip"
@@ -191,11 +142,10 @@
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:marqueeRepeatLimit="marquee_forever"
-                        android:paddingTop="5.0dip"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
                         android:text="@string/maintainer_name"
-                        android:textColor="@android:color/system_accent1_100"
+                        android:textColor="@color/content_color"
                         android:textSize="15.0dip" />
                 </LinearLayout>
             </LinearLayout>
@@ -209,7 +159,60 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@android:color/system_accent1_700">
+                android:backgroundTint="?android:attr/colorPrimary">
+
+                <LinearLayout
+                    android:id="@+id/l_cpu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginStart="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginEnd="20.0dip"
+                    android:layout_marginBottom="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:tint="@color/content_color"
+                        android:layout_width="35.0dip"
+                        android:layout_height="35.0dip"
+                        android:paddingTop="5.0dip"
+                        android:src="@drawable/ic_cpu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="13.0dip"
+                        android:text="Chipset"
+                        android:textColor="?android:textColorSecondary"
+                        android:textSize="13.0sp" />
+
+                    <TextView
+                        android:id="@+id/cpu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="Unknown"
+                        android:textColor="@color/content_color"
+                        android:textSize="15.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/nad_top_bg"
+                android:backgroundTint="?android:attr/colorPrimary">
 
                 <LinearLayout
                     android:id="@+id/l_build_number"
@@ -223,7 +226,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:tint="@android:color/system_accent1_100"
+                        android:tint="@color/content_color"
                         android:layout_width="35.0dip"
                         android:layout_height="35.0dip"
                         android:paddingTop="5.0dip"
@@ -245,11 +248,10 @@
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:marqueeRepeatLimit="marquee_forever"
-                        android:paddingTop="5.0dip"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
                         android:text="Unknown"
-                        android:textColor="@android:color/system_accent1_100"
+                        android:textColor="@color/content_color"
                         android:textSize="15.0dip" />
                 </LinearLayout>
             </LinearLayout>
@@ -260,8 +262,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="20.0dp"
-        android:layout_marginBottom="-22dp"
-        android:layout_marginTop="15dp"
+        android:paddingTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-20dp"
         android:background="@drawable/nad_round_top"
         android:backgroundTint="?android:attr/colorPrimary"
         android:gravity="bottom"

@@ -19,24 +19,17 @@
     android:orientation="vertical"
     android:padding="25dp">
 
-    <!--ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|center"
-        android:layout_margin="15.0dip"
-        android:adjustViewBounds="true"
-        android:paddingTop="15dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/logo_nusantara" /-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="15.0dip"
         android:gravity="center"
+        android:background="@drawable/nad_l_bg"
+        android:backgroundTint="@android:color/system_neutral1_700"
         android:orientation="horizontal">
 
-        <ImageView
+        <!--ImageView
             android:id="@+id/goGithub"
             android:layout_width="@dimen/ic_size"
             android:layout_height="@dimen/ic_size"
@@ -58,19 +51,15 @@
             android:backgroundTint="@android:color/system_neutral1_700"
             android:padding="10dp"
             android:src="@drawable/twitter"
-            android:tint="@android:color/system_accent1_300" />
+            android:tint="@android:color/system_accent1_300" /-->
 
         <ImageView
             android:id="@+id/goNad"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:src="@drawable/nad_wings"
-            android:tint="@android:color/holo_red_dark" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_nusantara" />
 
-        <ImageView
+        <!--ImageView
             android:id="@+id/goTelegram"
             android:layout_width="@dimen/ic_size"
             android:layout_height="@dimen/ic_size"
@@ -92,7 +81,7 @@
             android:backgroundTint="@android:color/system_neutral1_700"
             android:padding="10dp"
             android:src="@drawable/instagram"
-            android:tint="@android:color/system_accent1_300" />
+            android:tint="@android:color/system_accent1_300" /-->
 
 
     </LinearLayout>

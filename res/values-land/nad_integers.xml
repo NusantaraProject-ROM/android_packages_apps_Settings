@@ -18,4 +18,5 @@
     <!-- Firmware View Grid -->
     <integer name="colFV">4</integer>
     <integer name="rowFV">1</integer>
+    <integer name="gridInfo">3</integer>
 </resources>
