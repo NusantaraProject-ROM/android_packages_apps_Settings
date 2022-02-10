@@ -72,7 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="13.0dip"
-                        android:text="Nusantara Version"
+                        android:text="Version"
                         android:textColor="?android:textColorSecondary"
                         android:textSize="13.0sp" />
 
@@ -130,7 +130,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:paddingTop="13.0dip"
                         android:singleLine="true"
-                        android:text="Maintainer Name"
+                        android:text="Maintainer"
                         android:textColor="?android:textColorSecondary"
                         android:textSize="13.0sp" />
 
