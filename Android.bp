@@ -87,6 +87,7 @@ android_library {
         "windowExtLib",
         "VendorSupportLib",
         "glide",
+        "faceunlock_framework",
     ],
 
     libs: [
