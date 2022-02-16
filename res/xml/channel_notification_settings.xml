@@ -117,13 +117,12 @@
             android:dependency="lights"
             android:order="19"
             android:title="@string/custom_light_title"
-            settings:defaultColorValue="0xFFFFFFFF" />
+            android:defaultValue="0xFFFFFFFF" />
 
         <com.nusantara.support.preferences.CustomSeekBarPreference
             android:key="custom_light_on_time"
             android:dependency="lights"
             android:title="@string/custom_light_on_time_title"
-            settings:defaultText="@string/value_equals_default"
             android:order="21"
             settings:min="0"
             android:max="10000"
@@ -134,7 +133,6 @@
             android:key="custom_light_off_time"
             android:dependency="lights"
             android:title="@string/custom_light_off_time_title"
-            settings:defaultText="@string/value_equals_default"
             android:order="22"
             settings:min="0"
             android:max="10000"
