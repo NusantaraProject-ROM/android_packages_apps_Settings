@@ -16,6 +16,8 @@
 
 package com.android.settings.media;
 
+import com.android.settings.R;
+
 import static android.app.slice.Slice.EXTRA_RANGE_VALUE;
 import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
 
@@ -135,6 +137,11 @@ public class AppVolumeSlice implements CustomSliceable {
     @Override
     public Uri getUri() {
         return APP_VOLUME_SLICE_URI;
+    }
+
+    @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_sound;
     }
 
     @Override

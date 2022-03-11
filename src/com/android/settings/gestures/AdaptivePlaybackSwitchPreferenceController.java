@@ -33,6 +33,8 @@ import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
 import com.android.settingslib.widget.MainSwitchPreference;
 
+import com.android.settings.R;
+
 public class AdaptivePlaybackSwitchPreferenceController extends
         SettingsMainSwitchPreferenceController implements LifecycleObserver, OnStart, OnStop {
 
@@ -77,6 +79,11 @@ public class AdaptivePlaybackSwitchPreferenceController extends
     @Override
     public void onStop() {
         mContext.getContentResolver().unregisterContentObserver(mSettingsObserver);
+    }
+
+    @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_system;
     }
 
     @Override

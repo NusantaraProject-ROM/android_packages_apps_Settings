@@ -81,6 +81,8 @@ class LongPressPowerButtonTorchPreferenceController(
         return if (assistEnabled && assistEnabledUser) DISABLED_DEPENDENT_SETTING else AVAILABLE
     }
 
+    override fun getSliceHighlightMenuRes(): Int = R.string.menu_key_system
+
     override fun isChecked() = PowerMenuSettingsUtils.isLongPressPowerForTorchEnabled(mContext)
 
     override fun setChecked(isChecked: Boolean): Boolean {
