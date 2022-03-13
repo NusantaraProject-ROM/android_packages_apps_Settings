@@ -27,25 +27,49 @@
     android:background="?android:attr/selectableItemBackground"
     android:clipToPadding="false"
     android:baselineAligned="false">
-
-    <LinearLayout
+    
+    <LinearLayout 
         android:id="@+id/icon_frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="56dp"
-        android:gravity="center"
+        android:layout_marginEnd="8dp"
+        android:gravity="start|center_vertical"
+        android:minWidth="60dp"
         android:orientation="horizontal"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
         android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp"
         android:paddingBottom="4dp">
 
-        <androidx.preference.internal.PreferenceImageView
-            android:id="@android:id/icon"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:maxWidth="40dp"
-            app:maxHeight="40dp"/>
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/nad_top_bg"
+            android:backgroundTint="@android:color/system_accent1_500"
+            android:minWidth="60dp"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
+
+            <androidx.preference.internal.PreferenceImageView
+                android:id="@android:id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:tint="@android:color/system_neutral1_10"
+                app:maxHeight="48dp"
+                app:maxWidth="48dp" />
+        </FrameLayout>
 
     </LinearLayout>
 
