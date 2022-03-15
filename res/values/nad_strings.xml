@@ -87,7 +87,7 @@
     <string name="volume_skiptrack_summary">Long press the volume rocker to skip tracks when playing music, even remotely on tv or PC with e.g. Spotify (app must run on the phone and show the notification).</string>
     
     <!-- Story of Code Name Source of Wikipedia -->
-    <string name="story">Sabang is a city in Aceh province, Indonesia consisting of a main island and several smaller islands off the northern tip of Sumatra. The administrative centre is located 17 km north of Banda Aceh.</string>
+    <string name="story">Seinendan (青年団) is a youth organization formed on March 9, 1943 by the Japanese army in Indonesia. The purpose of this seinendan organization is to educate and train young people so that they can defend their homeland with their own strength.</string>
 
     <!-- Overlay for maintener -->
     <string name="github_username">703joko</string>
