@@ -183,6 +183,8 @@
     <string name="long_label">Long</string>
     <string name="lower_label">Low</string>
     <string name="highest_label">Highest</string>
+    <string name="thin_label">Thin</string>
+    <string name="thick_label">Thick</string>
 
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="fingerprint_enroll_find_sensor_message_front">Locate the fingerprint sensor on the front of your phone.</string>
