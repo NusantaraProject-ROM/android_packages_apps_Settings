@@ -98,6 +98,15 @@
             android:selectable="true"
             settings:textStart="@string/short_label"
             settings:textEnd="@string/long_label"/>
+            
+        <com.android.settings.widget.LabeledSeekBarPreference
+            android:key="gesture_navbar_margin_bottom_preference"
+            android:title="@string/gesture_navbar_margin_bottom_title"
+            android:max="3"
+            android:selectable="true"
+            settings:textStart="@string/lower_label"
+            settings:textEnd="@string/highest_label"/>
+
     </PreferenceCategory>
 </PreferenceScreen>
 

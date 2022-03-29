@@ -177,9 +177,12 @@
     <!-- Gesture navbar length -->
     <string name="gesture_navbar_length_title">Pill length</string>
     <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="gesture_navbar_margin_bottom_title">Pill margin bottom</string>
     <string name="medium_label">Medium</string>
     <string name="short_label">Short</string>
     <string name="long_label">Long</string>
+    <string name="lower_label">Low</string>
+    <string name="highest_label">Highest</string>
 
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="fingerprint_enroll_find_sensor_message_front">Locate the fingerprint sensor on the front of your phone.</string>
