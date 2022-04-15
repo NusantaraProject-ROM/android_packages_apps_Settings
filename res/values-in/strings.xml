@@ -3499,7 +3499,7 @@
       <item quantity="other">Tampilkan %d item tersembunyi</item>
       <item quantity="one">Tampilkan %d item tersembunyi</item>
     </plurals>
-    <string name="network_dashboard_title" msgid="788543070557731240">"Jaringan &amp; internet"</string>
+    <string name="network_dashboard_title" msgid="788543070557731240">"Internet"</string>
     <string name="network_dashboard_summary_mobile" msgid="7750924671970583670">"Data seluler, Wi‑Fi, hotspot"</string>
     <string name="network_dashboard_summary_no_mobile" msgid="4022575916334910790">"Wi‑Fi, hotspot"</string>
     <string name="connected_devices_dashboard_title" msgid="19868275519754895">"Perangkat terhubung"</string>

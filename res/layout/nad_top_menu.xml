@@ -177,25 +177,30 @@
             android:id="@+id/wifi"
             android:backgroundTint="@android:color/system_accent1_500"
             android:background="@drawable/nad_top_bg"
+            android:layout_gravity="center"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:antialias="true"
-                android:layout_gravity="center"
+                android:gravity="end|center_vertical"
+                android:layout_gravity="end|center_vertical"
                 android:scaleType="fitCenter"
+                android:layout_marginEnd="-10dp"
                 android:layout_weight="1"
                 android:tint="@android:color/system_neutral1_10"
                 android:src="@drawable/ic_settings_wireless" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:text="@string/network_dashboard_title"
-                android:layout_gravity="center"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="-8dp"
+                android:gravity="start|center_vertical"
                 android:textColor="@android:color/system_neutral1_10"
                 style="@style/PreferenceSummaryTextStyle"/>
 
@@ -213,21 +218,26 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:antialias="true"
                 android:rotation="90"
+                android:gravity="end|center_vertical"
+                android:layout_gravity="end|center_vertical"
                 android:scaleType="fitCenter"
+                android:layout_marginEnd="-8dp"
                 android:tint="@android:color/system_neutral1_10"
                 android:src="@drawable/ic_settings_battery_white" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/battery_text"
+                android:layout_marginStart="-10dp"
                 android:textColor="@android:color/system_neutral1_10"
-                android:layout_gravity="center"
+                android:layout_gravity="start|center_vertical"
+                android:gravity="start|center_vertical"
                 style="@style/PreferenceSummaryTextStyle"/>
 
         </LinearLayout>

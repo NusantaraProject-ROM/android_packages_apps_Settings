@@ -18,10 +18,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="25.0dip"
-    android:layout_marginEnd="25.0dip"
-    android:paddingTop="20dp"
-    android:layout_marginBottom="15.0dp">
+    android:layout_margin="25dp">
 
         <GridLayout
             android:id="@+id/main_grid"
@@ -30,7 +27,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="start|center"
-            android:layout_marginEnd="10dp"
+            android:paddingStart="20.0dip"
+            android:paddingTop="5dp"
+            android:paddingEnd="20.0dip"
+            android:paddingBottom="20.0dip"
             android:alignmentMode="alignBounds"
             android:columnCount="@integer/gridInfo"
             android:rowOrderPreserved="false"
