@@ -15,8 +15,7 @@
     xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/nad_bg_gaydient"
-    android:backgroundTint="?androidprv:attr/colorSurfaceHeader"
+    android:background="@android:color/transparent"
     android:gravity="center|bottom"
     android:orientation="vertical">
 
@@ -48,7 +47,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="?android:attr/colorPrimary">
+                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
 
                 <LinearLayout
                     android:id="@+id/l_nad_version"
@@ -101,7 +100,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="?android:attr/colorPrimary">
+                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
 
                 <LinearLayout
                     android:id="@+id/l_nama_maintener"
@@ -159,7 +158,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="?android:attr/colorPrimary">
+                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
 
                 <LinearLayout
                     android:id="@+id/l_cpu"
@@ -212,7 +211,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/nad_top_bg"
-                android:backgroundTint="?android:attr/colorPrimary">
+                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
 
                 <LinearLayout
                     android:id="@+id/l_build_number"
@@ -259,15 +258,16 @@
 
     </LinearLayout>
 
-    <View
+ <!--    <View
         android:layout_width="match_parent"
         android:layout_height="20.0dp"
         android:paddingTop="24dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="-20dp"
         android:background="@drawable/nad_round_top"
-        android:backgroundTint="?android:attr/colorPrimary"
+        android:backgroundTint="@color/settingslib_colorSurfaceHeader"
         android:gravity="bottom"
         android:rotation="180.0" />
+-->
 
 </LinearLayout>

@@ -20,6 +20,9 @@
     <dimen name="nad_top_bg_radius">28dp</dimen>
     <dimen name="ic_size">45dp</dimen>
 
+    <!-- Appbar elevation -->
+    <dimen name="design_appbar_elevation">0.1dp</dimen>
+
     <!-- Fingerprint -->
     <dimen name="fingerprint_find_sensor_padding_top">16dp</dimen>
     
