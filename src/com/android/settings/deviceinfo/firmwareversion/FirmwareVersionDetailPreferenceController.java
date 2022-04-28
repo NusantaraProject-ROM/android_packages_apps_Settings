@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.text.TextUtils;
@@ -40,6 +41,8 @@ public class FirmwareVersionDetailPreferenceController extends BasePreferenceCon
     private static final String TAG = "firmwareDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
+
+    private static final String NAD_OTA_BRANCH = "ro.nad.ota.version_code";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -75,7 +78,8 @@ public class FirmwareVersionDetailPreferenceController extends BasePreferenceCon
 
     @Override
     public CharSequence getSummary() {
-        return Build.VERSION.RELEASE_OR_CODENAME;
+        return SystemProperties.get(NAD_OTA_BRANCH, 
+            Build.VERSION.RELEASE_OR_CODENAME);
     }
 
     @Override
