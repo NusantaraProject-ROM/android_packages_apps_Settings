@@ -25,8 +25,10 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ContentResolver;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -69,6 +71,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import android.provider.Settings;
+import com.android.settingslib.Utils;
+import com.android.settings.utils.SecureSettings;
+
 
 import static android.content.ContentValues.TAG;
 
@@ -273,6 +280,38 @@ public class NadFirmwareView extends Preference {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         final boolean selectable = false;
         final Context context = getContext();
+        
+        int colorSurface = Utils.getColorAttr(context,
+                com.android.internal.R.attr.colorSurfaceHeader).getDefaultColor();
+        int colorPrimary = Utils.getColorAttr(context,
+                com.android.internal.R.attr.colorPrimary).getDefaultColor();
+        int color = context.getResources().getColor(R.color.settingslib_colorSurfaceHeader);
+        
+        ContentResolver resolver = context.getContentResolver();
+        boolean blurEnabled = Settings.System.getIntForUser(resolver, Settings.System.BLUR_STYLE_PREFERENCE_KEY, 0, -2) == 1;
+        boolean clearEnabled = Settings.Secure.getInt(resolver, Settings.Secure.SYSTEM_NUSANTARA_THEME, 0) == 1;
+        GradientDrawable gd = new GradientDrawable();
+        gd.setCornerRadius(28);
+        gd.setAlpha(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? 125  :  225);
+        gd.setColor(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? colorSurface :  colorPrimary);
+        LinearLayout mView1 = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/view1", null, context.getPackageName()));
+        LinearLayout mView2 = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/view2", null, context.getPackageName()));
+        LinearLayout mView3 = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/view3", null, context.getPackageName()));
+        LinearLayout mView4 = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/view4", null, context.getPackageName()));
+        View mView5 = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/view5", null, context.getPackageName()));
+                
+        holder.itemView.setBackgroundColor(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? Color.TRANSPARENT :  colorSurface);
+        mView1.setBackground(gd);
+        mView2.setBackground(gd);
+        mView3.setBackground(gd);
+        mView4.setBackground(gd);
+        mView5.setVisibility(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? View.GONE : View.VISIBLE);
+        
         TextView chipsetInfo = holder.itemView.findViewById(context.getResources().
                 getIdentifier("id/cpu", null, context.getPackageName()));
         chipsetInfo.setSelected(true);

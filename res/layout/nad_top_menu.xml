@@ -16,7 +16,7 @@
         android:layout_marginEnd="?android:attr/listPreferredItemPaddingEnd"
         android:layout_marginBottom="20dp"
         android:background="@drawable/nad_top_bg"
-        android:backgroundTint="@color/settingslib_colorSurfaceHeader"
+        android:backgroundTint="?androidprv:attr/colorSurfaceHighlight"
         android:clipToPadding="false"
         android:orientation="vertical">
 

@@ -20,6 +20,10 @@ import android.app.Activity;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ContentResolver;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.content.res.TypedArray;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserManager;
@@ -47,6 +51,9 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
+
+import android.provider.Settings;
+import com.android.settings.utils.SecureSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,7 +141,28 @@ public class MyDeviceInfoFragment extends DashboardFragment
         if (!shouldDisplayHeader) {
             return;
         }
+        ContentResolver resolver = getContext().getContentResolver();
+        boolean blurEnabled = Settings.System.getIntForUser(resolver, Settings.System.BLUR_STYLE_PREFERENCE_KEY, 0, -2) == 1;
+        boolean clearEnabled = Settings.Secure.getInt(resolver, Settings.Secure.SYSTEM_NUSANTARA_THEME, 0) == 1;
+        
+        int colorSurface = com.android.settingslib.Utils.getColorAttr(getContext(),
+                com.android.internal.R.attr.colorSurfaceHeader).getDefaultColor();
+        int colorPrimary = com.android.settingslib.Utils.getColorAttr(getContext(),
+                com.android.internal.R.attr.colorPrimary).getDefaultColor();
+        int color = getContext().getResources().getColor(R.color.settingslib_colorSurfaceHeader);
+        GradientDrawable gd = new GradientDrawable();
+        gd.setCornerRadius(28);
+        gd.setAlpha(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? 125  :  225);
+        gd.setColor(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? colorSurface :  colorPrimary);
+        
         final View headerView = headerPreference.findViewById(R.id.entity_header);
+        final View mView6 = headerPreference.findViewById(R.id.view6);
+        final View mAvaBg = headerPreference.findViewById(R.id.avatar_bg);
+        
+        headerView.setBackground(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? null :  getContext().getResources().getDrawable(R.drawable.nad_bg_gaydient));
+        mAvaBg.setBackground(gd);
+        mView6.setVisibility(blurEnabled || clearEnabled || blurEnabled && clearEnabled ? View.GONE : View.VISIBLE);
+        
         final Activity context = getActivity();
         final Bundle bundle = getArguments();
         final EntityHeaderController controller = EntityHeaderController
@@ -157,7 +185,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
 
         controller.done(context, true /* rebindActions */);
     }
-
+    
     @Override
     public void showDeviceNameWarningDialog(String deviceName) {
         DeviceNameWarningDialog.show(this);

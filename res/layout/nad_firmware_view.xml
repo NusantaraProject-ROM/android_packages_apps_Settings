@@ -15,7 +15,7 @@
     xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
+    android:layout_marginTop="-15dp"
     android:gravity="center|bottom"
     android:orientation="vertical">
 
@@ -23,7 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15.0dip"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15.0dip"
         android:orientation="vertical">
 
@@ -46,8 +46,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
+                android:id="@+id/view1"
+                android:background="@drawable/nad_top_bg">
 
                 <LinearLayout
                     android:id="@+id/l_nad_version"
@@ -99,8 +99,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
+                android:id="@+id/view2"
+                android:background="@drawable/nad_top_bg">
 
                 <LinearLayout
                     android:id="@+id/l_nama_maintener"
@@ -157,8 +157,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
+                android:id="@+id/view3"
+                android:background="@drawable/nad_top_bg">
 
                 <LinearLayout
                     android:id="@+id/l_cpu"
@@ -210,8 +210,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/nad_top_bg"
-                android:backgroundTint="@color/settingslib_colorSurfaceHeader">
+                android:id="@+id/view4"
+                android:background="@drawable/nad_top_bg">
 
                 <LinearLayout
                     android:id="@+id/l_build_number"
@@ -258,16 +258,15 @@
 
     </LinearLayout>
 
- <!--    <View
+    <View
         android:layout_width="match_parent"
         android:layout_height="20.0dp"
         android:paddingTop="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="-20dp"
+        android:id="@+id/view5"
+        android:layout_marginBottom="-5.0dp"
         android:background="@drawable/nad_round_top"
-        android:backgroundTint="@color/settingslib_colorSurfaceHeader"
+        android:backgroundTint="?android:attr/colorPrimary"
         android:gravity="bottom"
         android:rotation="180.0" />
--->
 
 </LinearLayout>
