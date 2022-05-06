@@ -22,6 +22,9 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.AttributeSet;
+import android.util.Log;
+
+import androidx.annotation.VisibleForTesting;
 
 public class DefaultRingtonePreference extends RingtonePreference {
     private static final String TAG = "DefaultRingtonePreference";
@@ -45,6 +48,26 @@ public class DefaultRingtonePreference extends RingtonePreference {
     protected void onSaveRingtone(Uri ringtoneUri) {
         RingtoneManager.setActualDefaultRingtoneUriForPhoneAccountHandle(mUserContext,
                 getRingtoneType(), ringtoneUri, getPhoneAccountHandle());
+
+        String mimeType = getContext().getContentResolver().getType(ringtoneUri);
+        if (mimeType == null) {
+            Log.e(TAG, "onSaveRingtone for URI:" + ringtoneUri
+                    + " ignored: failure to find mimeType (no access from this context?)");
+            return;
+        }
+
+        if (!(mimeType.startsWith("audio/") || mimeType.equals("application/ogg"))) {
+            Log.e(TAG, "onSaveRingtone for URI:" + ringtoneUri
+                    + " ignored: associated mimeType:" + mimeType + " is not an audio type");
+            return;
+        }
+
+        setActualDefaultRingtoneUri(ringtoneUri);
+    }
+
+    @VisibleForTesting
+    void setActualDefaultRingtoneUri(Uri ringtoneUri) {
+        RingtoneManager.setActualDefaultRingtoneUri(mUserContext, getRingtoneType(), ringtoneUri);
     }
 
     @Override
