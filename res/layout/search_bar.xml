@@ -18,6 +18,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/search_bar_margin">
@@ -27,8 +28,8 @@
         style="@style/SearchBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
-        <!--app:cardBackgroundColor="@color/settingslib_colorSurfaceHeader"--> 
+        android:layout_weight="1" 
+        app:cardBackgroundColor="?androidprv:attr/colorSurfaceHighlight"> 
         <Toolbar
             android:id="@+id/search_action_bar"
             android:layout_width="match_parent"

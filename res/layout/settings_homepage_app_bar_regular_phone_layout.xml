@@ -25,9 +25,9 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/homepage_title_margin_top"
         android:orientation="horizontal"
         android:elevation="0.0dip"
+        android:layout_marginTop="20.0dip"
         app:layout_collapseMode="pin">
 
         <TextView
@@ -40,7 +40,7 @@
             android:id="@+id/account_avatar"
             android:layout_width="@dimen/avatar_length"
             android:layout_height="@dimen/avatar_length"
-            android:layout_marginTop="10.0dip"
+            android:layout_marginTop="25.0dip"
             android:layout_marginEnd="@dimen/avatar_margin_end"
             android:visibility="invisible"
             android:accessibilityTraversalAfter="@id/homepage_title"

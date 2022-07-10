@@ -21,7 +21,7 @@
     android:key="top_level_settings">
     
     <com.android.settings.dashboard.TopMenu
-        android:order="-150"/>
+        android:order="-160"/>
 
     <!--Preference
         android:key="top_level_nusantara"
@@ -31,7 +31,7 @@
         android:fragment="com.nusantara.wings.NusantaraWings"
         android:order="-105"/-->
 
-    <!--<com.android.settings.widget.HomepagePreference
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
         android:key="top_level_network"
@@ -39,7 +39,7 @@
         android:title="@string/network_dashboard_title"
         android:summary="@string/summary_placeholder"
         settings:highlightableMenuKey="@string/menu_key_network"
-        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/-->
+        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
@@ -69,7 +69,7 @@
         android:summary="@string/notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_notifications"/>
 
-    <!--com.android.settings.widget.HomepagePreference
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.fuelgauge.PowerUsageSummary"
         android:icon="@drawable/ic_settings_battery_white"
         android:key="top_level_battery"
@@ -77,7 +77,7 @@
         android:title="@string/power_usage_summary_title"
         android:summary="@string/summary_placeholder"
         settings:highlightableMenuKey="@string/menu_key_battery"
-        settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/-->
+        settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.deviceinfo.StorageDashboardFragment"
@@ -175,14 +175,14 @@
         settings:highlightableMenuKey="@string/menu_key_accounts"
         settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController"/>
 
-    <com.android.settings.widget.HomepagePreference
+    <!--com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.system.SystemDashboardFragment"
         android:icon="@drawable/ic_settings_system_dashboard_white"
         android:key="top_level_system"
         android:order="10"
         android:title="@string/header_category_system"
         android:summary="@string/system_dashboard_summary"
-        settings:highlightableMenuKey="@string/menu_key_system"/>
+        settings:highlightableMenuKey="@string/menu_key_system"/-->
 
     <!--com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"

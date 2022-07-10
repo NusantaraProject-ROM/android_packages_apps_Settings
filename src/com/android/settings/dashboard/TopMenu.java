@@ -88,11 +88,11 @@ public class TopMenu extends Preference {
         final boolean selectable = false;
         final Context context = getContext();
 
-        TextView mBatteryText = holder.itemView.findViewById(context.getResources().
+        /**TextView mBatteryText = holder.itemView.findViewById(context.getResources().
                 getIdentifier("id/battery_text", null, context.getPackageName()));
 
-        TextView deviceName = holder.itemView.findViewById(context.getResources().
-                getIdentifier("id/device_name", null, context.getPackageName()));
+        //TextView deviceName = holder.itemView.findViewById(context.getResources().
+              //  getIdentifier("id/device_name", null, context.getPackageName()));
 
         context.registerReceiver(new BroadcastReceiver() {
             @Override
@@ -131,6 +131,7 @@ public class TopMenu extends Preference {
                 }
             }
         }, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        **/
 
         holder.itemView.setFocusable(selectable);
         holder.itemView.setClickable(selectable);
@@ -159,7 +160,7 @@ public class TopMenu extends Preference {
             }
         });
 
-        LinearLayout mWifi = holder.itemView.findViewById(context.getResources().
+        /**LinearLayout mWifi = holder.itemView.findViewById(context.getResources().
                 getIdentifier("id/wifi", null, context.getPackageName()));
         mWifi.setClickable(true);
         mWifi.setOnClickListener(new View.OnClickListener() {
@@ -168,21 +169,21 @@ public class TopMenu extends Preference {
                 intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$NetworkDashboardActivity"));
                 context.startActivity(intent);
             }
-        });
+        });*/
 
-        LinearLayout mBattery = holder.itemView.findViewById(context.getResources().
-                getIdentifier("id/battery", null, context.getPackageName()));
-        mBattery.setClickable(true);
-        mBattery.setOnClickListener(new View.OnClickListener() {
+        LinearLayout mSystem = holder.itemView.findViewById(context.getResources().
+                getIdentifier("id/system", null, context.getPackageName()));
+        mSystem.setClickable(true);
+        mSystem.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$PowerUsageSummaryActivity"));
+                intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$SystemDashboardActivity"));
                 context.startActivity(intent);
             }
         });
 
         //deviceName.setText(getDeviceModel());
-        setInfo("ro.product.model", deviceName);
+        //setInfo("ro.product.model", deviceName);
     }
 
 }

@@ -76,7 +76,7 @@
             android:layout_height="@dimen/settingslib_toolbar_layout_height"
             app:collapsedTitleTextAppearance="@style/CollapsingToolbarTitle.Collapsed"
             app:contentScrim="@drawable/home_header_round"  
-            app:expandedTitleMarginBottom="60dp"  
+            app:expandedTitleMarginBottom="20dp"  
             app:expandedTitleMarginEnd="@dimen/expanded_title_margin_end"
             app:expandedTitleMarginStart="@dimen/expanded_title_margin_start"
             app:expandedTitleTextAppearance="@style/CollapsingToolbarTitle.Expanded"
@@ -89,20 +89,21 @@
             app:statusBarScrim="?android:colorBackground"
             app:title="@string/settings_label"
             app:titleCollapseMode="scale">
+                
             <Toolbar 
                   android:theme="?android:actionBarTheme"
                   android:layout_width="fill_parent"
                   android:layout_height="56.0dip"
                   android:transitionName="shared_element_view"
                   app:layout_collapseMode="pin" 
-                  android:layout_marginTop="10dp"
+                  android:layout_marginTop="2.0dp"
                   app:titleMarginStart="@dimen/expanded_title_margin_start" />
             <LinearLayout
                   android:id="@+id/app_bar_container"
                   android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
-                  android:gravity="bottom"
+                  android:gravity="center_vertical"
                   app:layout_scrollFlags="exitUntilCollapsed|scroll|snap">
 
                   <include
@@ -115,7 +116,9 @@
                         android:visibility="gone"/>
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-        <include
+        
+            <include
                 layout="@layout/search_bar" />
+                
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
