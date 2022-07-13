@@ -191,7 +191,7 @@
                 android:text="@string/about_settings"
                 android:layout_gravity="start|center_vertical"
                 android:gravity="start|center_vertical"
-                android:textColor="@android:color/system_neutral1_10"
+                android:textColor="?android:attr/textColorPrimary"
                 style="@style/PreferenceSummaryTextStyle"/>
 
             <ImageView
@@ -203,7 +203,7 @@
                 android:scaleType="fitCenter"
                 android:layout_marginStart="2dp"
                 android:layout_weight="0.8"
-                android:tint="@android:color/system_neutral1_10"
+                android:tint="?android:attr/textColorPrimary"
                 android:src="@drawable/ic_phone_info" />
 
         </LinearLayout>
@@ -228,7 +228,7 @@
                 android:text="@string/header_category_system"
                 android:layout_gravity="start|center_vertical"
                 android:gravity="start|center_vertical"
-                android:textColor="@android:color/system_neutral1_10"
+                android:textColor="?android:attr/textColorPrimary"
                 style="@style/PreferenceSummaryTextStyle"/>
 
             <ImageView
@@ -240,7 +240,7 @@
                 android:scaleType="fitCenter"
                 android:layout_marginStart="2dp"
                 android:layout_weight="0.8"
-                android:tint="@android:color/system_neutral1_10"
+                android:tint="?android:attr/textColorPrimary"
                 android:src="@drawable/ic_settings_system_dashboard_white" />
 
         </LinearLayout>
