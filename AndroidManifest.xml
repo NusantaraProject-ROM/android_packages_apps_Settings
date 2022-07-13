@@ -4307,8 +4307,7 @@
         <activity android:name="Settings$NusantaraWingsActivity"
             android:label="@string/nusantarawings_title"
             android:icon="@drawable/ic_settings_nusantarawings"
-            android:exported="true"
-            android:parentActivityName="com.android.settings">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.settings.NUSANTARA_WINGS" />
             </intent-filter>
@@ -4321,7 +4320,6 @@
         <!-- NAD Team dialog -->
         <activity android:name="com.nusantara.wings.fragments.team.TeamActivity"
                   android:taskAffinity=""
-                  android:parentActivityName="Settings"
                   android:exported="true"
                   android:theme="@style/TeamDialog"
                   android:label="@string/dialog_team_title" />
@@ -4406,8 +4404,7 @@
             android:label="@string/changelog_title"
             android:theme="@style/Theme.SubSettingsBase"
             android:exported="true"
-            android:taskAffinity="com.android.settings"
-            android:parentActivityName="Settings">
+            android:taskAffinity="com.android.settings">
             <intent-filter android:priority="70">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.android.settings.DEFAULT" />

@@ -11,7 +11,7 @@ public class HowItWorks extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nfc_payment_how_it_works);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        // getActionBar().setDisplayHomeAsUpEnabled(true);
         Button gotIt = (Button) findViewById(R.id.nfc_how_it_works_button);
         gotIt.setOnClickListener(new View.OnClickListener() {
             @Override

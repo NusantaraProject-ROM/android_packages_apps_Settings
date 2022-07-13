@@ -59,7 +59,7 @@ public class AppPicker extends ListActivity {
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        // getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mPermissionName = getIntent().getStringExtra(EXTRA_REQUESTIING_PERMISSION);
         mDebuggableOnly = getIntent().getBooleanExtra(EXTRA_DEBUGGABLE, false);

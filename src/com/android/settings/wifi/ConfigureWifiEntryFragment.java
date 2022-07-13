@@ -119,7 +119,7 @@ public class ConfigureWifiEntryFragment extends InstrumentedFragment implements 
          */
         final ActionBar actionBar = getActivity().getActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
+            // actionBar.setDisplayHomeAsUpEnabled(false);
             actionBar.setHomeButtonEnabled(false);
             actionBar.setDisplayShowHomeEnabled(false);
         }

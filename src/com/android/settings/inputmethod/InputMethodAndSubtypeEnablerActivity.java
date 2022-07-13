@@ -29,7 +29,7 @@ public class InputMethodAndSubtypeEnablerActivity extends SettingsActivity {
         super.onCreate(savedState);
         final ActionBar actionBar = getActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+            // actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
         }
     }

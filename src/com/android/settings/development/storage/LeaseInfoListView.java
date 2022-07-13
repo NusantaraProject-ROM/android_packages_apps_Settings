@@ -16,7 +16,7 @@
 
 package com.android.settings.development.storage;
 
-import android.app.ActionBar;
+// import android.app.ActionBar;
 import android.app.ListActivity;
 import android.app.blob.BlobInfo;
 import android.app.blob.BlobStoreManager;
@@ -77,10 +77,10 @@ public class LeaseInfoListView extends ListActivity {
         getListView().addFooterView(getFooterView());
         getListView().setClickable(false);
 
-        final ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // final ActionBar actionBar = getActionBar();
+        // if (actionBar != null) {
+        //     actionBar.setDisplayHomeAsUpEnabled(true);
+        // }
     }
 
     @Override

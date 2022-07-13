@@ -16,7 +16,7 @@
 
 package com.android.settings.development.storage;
 
-import android.app.ActionBar;
+// import android.app.ActionBar;
 import android.app.ListActivity;
 import android.app.blob.BlobInfo;
 import android.app.blob.BlobStoreManager;
@@ -60,10 +60,10 @@ public class BlobInfoListView extends ListActivity {
         mAdapter = new BlobListAdapter(this);
         setListAdapter(mAdapter);
 
-        final ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // final ActionBar actionBar = getActionBar();
+        // if (actionBar != null) {
+        //     actionBar.setDisplayHomeAsUpEnabled(true);
+        // }
     }
 
     @Override

@@ -103,7 +103,7 @@ public abstract class ConfirmDeviceCredentialBaseActivity extends SettingsActivi
                 ConfirmDeviceCredentialBaseFragment.TITLE_TEXT);
         setTitle(msg);
         if (getActionBar() != null) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+            // getActionBar().setDisplayHomeAsUpEnabled(true);
             getActionBar().setHomeButtonEnabled(true);
         }
         mRestoring = savedState != null;

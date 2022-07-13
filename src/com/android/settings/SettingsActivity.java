@@ -305,7 +305,7 @@ public class SettingsActivity extends SettingsBaseActivity
 
         final ActionBar actionBar = getActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(!isInSetupWizard);
+            // actionBar.setDisplayHomeAsUpEnabled(!isInSetupWizard);
             actionBar.setHomeButtonEnabled(!isInSetupWizard);
             actionBar.setDisplayShowTitleEnabled(true);
         }

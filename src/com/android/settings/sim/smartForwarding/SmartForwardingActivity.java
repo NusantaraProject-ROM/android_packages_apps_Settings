@@ -23,7 +23,7 @@ import static com.android.settings.sim.smartForwarding.SmartForwardingUtils.clea
 import static com.android.settings.sim.smartForwarding.SmartForwardingUtils.getAllSlotCallForwardingStatus;
 import static com.android.settings.sim.smartForwarding.SmartForwardingUtils.getAllSlotCallWaitingStatus;
 
-import android.app.ActionBar;
+// import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -59,10 +59,10 @@ public class SmartForwardingActivity extends SettingsBaseActivity {
         toolbar.setVisibility(View.VISIBLE);
         setActionBar(toolbar);
 
-        final ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // final ActionBar actionBar = getActionBar();
+        // if (actionBar != null) {
+        //     actionBar.setDisplayHomeAsUpEnabled(true);
+        // }
 
         getSupportFragmentManager()
                 .beginTransaction()

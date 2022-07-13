@@ -242,7 +242,7 @@ public class NotificationHistoryActivity extends CollapsingToolbarBaseActivity {
 
         ActionBar actionBar = getActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+            // actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayShowTitleEnabled(true);
         }
