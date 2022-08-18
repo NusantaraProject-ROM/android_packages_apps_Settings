@@ -133,7 +133,7 @@
     <dimen name="search_bar_content_inset">56dp</dimen>
 
     <!-- Avatar -->
-    <dimen name="avatar_length">48dp</dimen>
+    <dimen name="avatar_length">40dp</dimen>
     <dimen name="avatar_margin_top">56dp</dimen>
     <dimen name="avatar_margin_end">24dp</dimen>
 

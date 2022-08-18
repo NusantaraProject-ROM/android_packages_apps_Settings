@@ -41,4 +41,6 @@
     <dimen name="columbus_illustration_layout_width">240.0dip</dimen>
     <dimen name="columbus_list_item_text_spacing">32.0dip</dimen>
     
+    <dimen name="settingslib_home_toolbar_layout_height">99dp</dimen>
+    
 </resources>

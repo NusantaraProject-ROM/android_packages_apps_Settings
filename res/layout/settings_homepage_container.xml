@@ -73,7 +73,7 @@
             android:fitsSystemWindows="true"
             android:clipToPadding="false"
             android:layout_width="fill_parent"
-            android:layout_height="@dimen/settingslib_toolbar_layout_height"
+            android:layout_height="@dimen/settingslib_home_toolbar_layout_height"
             app:collapsedTitleTextAppearance="@style/CollapsingToolbarTitle.Collapsed"
             app:contentScrim="@drawable/home_header_round"  
             app:expandedTitleMarginBottom="20dp"  
